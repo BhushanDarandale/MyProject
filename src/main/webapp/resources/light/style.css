@@ -1226,9 +1226,9 @@ NOTE: This is main stylesheet of the template.
      transition: 0.3s;
  }
  .service-img {
-     height: 65px;
-     width: 60px;
-     background-size: contain;
+     height: 300px;
+     width: 350px;
+     background-size: fixed;
      margin: 0 auto;
      background-repeat: no-repeat;
  }
@@ -1242,6 +1242,39 @@ NOTE: This is main stylesheet of the template.
      margin: 0;
  }
  .single-service.theme-color:hover {}
+ 
+ /*=============================
+ 			ALBUM
+ ===============================*/
+ 
+ .album{
+     border: 1px solid transparent;
+     background-color: #fff;
+     box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.1);
+     font-size: 15px;
+     font-weight: 300;
+     margin-bottom: 30px;
+     padding: 50px 33px 46px;
+     -webkit-transition: 0.3s;
+     transition: 0.3s;
+ }
+ 
+ .album-img{
+ 	width:450px;
+ 	height:400px;
+ }
+ 
+ .album-heading{
+ 	margin-top:10px;
+ 	text-align:center;
+ }
+ album-heading h2{
+ 	 font-size: 18px;
+     font-weight: 400;
+     margin: 15px 0 20px;
+     text-transform: capitalize;
+     color:#ff9933;
+ }
  /*================================================
             7 WORK AREA
 ==================================================*/
