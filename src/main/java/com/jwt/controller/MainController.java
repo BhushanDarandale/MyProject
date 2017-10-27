@@ -25,7 +25,7 @@ public class MainController {
 			.getLogger(MainController.class);
 
 	public MainController() {
-		System.out.println("EmployeeController()");
+		System.out.println("Main Controller");
 	}
 
 	@Autowired
