@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.jwt.model.PhotoAlbum;
 import com.jwt.service.EmployeeService;
+import com.jwt.service.PhotoAlbumService;
 
 
 
@@ -27,8 +28,9 @@ import com.jwt.service.EmployeeService;
 @Controller
 public class PhotoController {
 	
+
 	@Autowired
-	private EmployeeService employeeService;
+	private PhotoAlbumService albumService;
 
 	@RequestMapping(value = "/photoalbum", method = RequestMethod.GET, headers = "Accept=application/json")
 	public String getAddAlbum(Model model, final HttpServletRequest request) throws IOException {
@@ -49,7 +51,7 @@ public class PhotoController {
 			album.setDate(new Date());
 			album.setTime(new Date());
 			album.setTotalImg(0);
-			employeeService.addAlbum(album);
+			albumService.addAlbum(album);
 		}
 
 		/*List<PhotoAlbum> albums = service.getAllAlbums(-1);

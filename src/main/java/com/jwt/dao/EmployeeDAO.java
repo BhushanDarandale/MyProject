@@ -16,7 +16,5 @@ public interface EmployeeDAO {
 
 	public Employee getEmployee(int employeeid);
 
-	public void addAlbum(PhotoAlbum album);
-
-	public List<PhotoAlbum> getAllAlbums();
+	
 }

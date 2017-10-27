@@ -48,19 +48,5 @@ public class EmployeeServiceImpl implements EmployeeService {
 		this.employeeDAO = employeeDAO;
 	}
 
-	@Override
-	public void addAlbum(PhotoAlbum album) {
-		// TODO Auto-generated method stub
-		employeeDAO.addAlbum(album);
-	}
-
-	@Override
-	public List<PhotoAlbum> getAllAlbums() {
-		// TODO Auto-generated method stub
-		 return employeeDAO.getAllAlbums();
-	}
-
-	
-
 
 }

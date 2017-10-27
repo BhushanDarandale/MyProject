@@ -48,17 +48,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return employee;
 	}
 
-	@Override
-	public void addAlbum(PhotoAlbum album) {
-		sessionFactory.getCurrentSession().saveOrUpdate(album);
-		
-	}
-
-	@Override
-	public List<PhotoAlbum> getAllAlbums() {
-		// TODO Auto-generated method stub
-		return sessionFactory.getCurrentSession().createQuery("from PhotoAlbum")
-				.list();
-	}
+	
 
 }

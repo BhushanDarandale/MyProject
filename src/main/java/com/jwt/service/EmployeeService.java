@@ -17,7 +17,5 @@ public interface EmployeeService {
 
 	public Employee updateEmployee(Employee employee);
 
-	public void addAlbum(PhotoAlbum album);
-
-	public List<PhotoAlbum> getAllAlbums();
+	
 }

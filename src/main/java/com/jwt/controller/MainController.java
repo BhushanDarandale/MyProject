@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.jwt.model.Employee;
 import com.jwt.model.PhotoAlbum;
 import com.jwt.service.EmployeeService;
+import com.jwt.service.PhotoAlbumService;
 
 @Controller
 public class MainController {
@@ -31,6 +32,10 @@ public class MainController {
 
 	@Autowired
 	private EmployeeService employeeService;
+	
+	
+	@Autowired
+	private PhotoAlbumService albumService;
 
 	@RequestMapping(value = "/")
 	public ModelAndView listEmployee(ModelAndView model) throws IOException {
@@ -108,7 +113,7 @@ public class MainController {
 	        else{  
 	        	 model =  new ModelAndView("restricted");   
 	        }  
-	        List<PhotoAlbum> albums = employeeService.getAllAlbums();
+	        List<PhotoAlbum> albums = albumService.getAllAlbums();
 	        model.addObject("Albums", albums);
 		
 		return model;
@@ -123,7 +128,7 @@ public class MainController {
 	        model = new ModelAndView("homeadmin");
 	        
 	        request.setAttribute("ROLE", "admin");
-	        List<PhotoAlbum> albums = employeeService.getAllAlbums();
+	        List<PhotoAlbum> albums = albumService.getAllAlbums();
 	        model.addObject("Albums", albums);
 		
 		return model;
