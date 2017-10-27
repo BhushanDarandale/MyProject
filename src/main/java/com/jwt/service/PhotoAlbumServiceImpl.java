@@ -3,11 +3,14 @@ package com.jwt.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.jwt.dao.EmployeeDAO;
 import com.jwt.dao.PhotoAlbumDAO;
 import com.jwt.model.PhotoAlbum;
-
+@Service
+@Transactional
 public class PhotoAlbumServiceImpl implements PhotoAlbumService {
 
 	
@@ -25,4 +28,6 @@ public class PhotoAlbumServiceImpl implements PhotoAlbumService {
 		// TODO Auto-generated method stub
 		 return albumDAO.getAllAlbums();
 	}
+
+	
 }

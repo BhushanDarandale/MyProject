@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.jwt.model.PhotoAlbum;
 
+@Repository
 public class PhotoAlbumDAOImpl implements PhotoAlbumDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -18,6 +20,7 @@ public class PhotoAlbumDAOImpl implements PhotoAlbumDAO {
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<PhotoAlbum> getAllAlbums() {
 		// TODO Auto-generated method stub

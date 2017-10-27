@@ -273,37 +273,58 @@
 
 
 			<!--/.row-->
-
 			<div class="work-inner">
 				<div class="row no-gutter">
-
 					<c:forEach items="${Albums}" var="albm" varStatus="loop">
-					
-					
-					<div class="col-md-4 col-sm-6 mix webdesign">
-						<div class="single-work">
-							<img
-								src="${albm.albumImage }"
-								alt="" style="width: 100%, Hieght:50%";>
-							<div class="item-hover">
-								<div class="work-table">
-									<div class="work-tablecell">
-										<div class="hover-content">
-											<h4>${albm.albumName }</h4>
-											<!-- <p>अनुभवी लोकप्रतिनिधी असून राजकीय बुद्धिचातुर्य व कौशल्य
+						<%-- <div class="col-md-4 col-sm-6" style="height: 400px; width: 500px">
+							<div class="single-work">
+								<img src="${albm.albumImage }" alt=""
+									 style="height: 400px; width: 500px">
+								<div class="item-hover"  style="height: 400px; width: 500px">
+									<div class="work-table"  style="height: 400px; width: 500px">
+										<div class="work-tablecell"  style="height: 400px; width: 500px">
+											<div class="hover-content"  style="height: 400px; width: 500px">
+												<h4>${albm.albumName }</h4>
+												<!-- <p>अनुभवी लोकप्रतिनिधी असून राजकीय बुद्धिचातुर्य व कौशल्य
 												यासाठी त्यांना विविध व्यासपिठांनी गौरविलेले आहे.</p> -->
-											<%-- <a class="work-popup theme-color"
-												href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"><i
-												class="fa fa-search-plus"></i></a> <a
-												class="work-link theme-color" href="#"><i
-												class="fa fa-link"></i></a> --%>
+												<a class="work-popup theme-color"
+											href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"><i
+											class="fa fa-search-plus"></i></a> <a
+											class="work-link theme-color" href="#"><i
+											class="fa fa-link"></i></a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div> --%>
+
+
+
+						<div class="col-md-4 col-sm-6">
+							<div class="single-service theme-color text-center wow fadeInUp"
+								data-wow-delay="0.6s"
+								style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+								<div class="service-img">
+									<img
+								src="${albm.albumImage }"
+								alt="">
+									
+									
+									</div>
+								<h3>${albm.albumName }</h3>
+								<!-- <p>जनतेचे प्रतिनिधित्त्व करीत असताना विविध समित्यांवर काम
+									केले आहे.</p> -->
+							</div>
 						</div>
-					</div>
-					
+
+
+
+
+
+
+
+
 					</c:forEach>
 				</div>
 			</div>
