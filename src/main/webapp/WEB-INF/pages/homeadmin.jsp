@@ -89,10 +89,10 @@
 									<th>#</th>
 									<th>Album Name</th>
 									<th>Release Date</th>
-									<th>Songs</th>
+									<th>Photos</th>
 									<th>Status</th>
 									<th>Update Album</th>
-									<th>Add Songs</th>
+									<th>Add Photo</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -177,10 +177,20 @@
 												value="${albm.albumName }" style="padding: 10px"
 												placeholder="Enter AlbumName">
 											<div
-												style="width: 100%; height: 45px; margin-bottom: 40px; border: 1px solid #ff0000; vertical-align: middle;">
+												style="width: 100%; height: 45px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
 												<input type="file" name="filename" id="name"
 													style="padding: 10px" accept="image/*">
 											</div>
+											<div>
+											<select>
+											<option>Active</option>
+											<option>DeActive</option>
+											</select>
+											
+											</div>
+											<br>
+											
+											
 											<p class="form-submit">
 												<input name="submit" type="submit" id="submit"
 													value="Submit">
