@@ -12,7 +12,7 @@
 <meta name="HandheldFriendly" content="true" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>बाबु पाटे</title>
+<!-- <title>बाबु पाटे</title> -->
 <head>
         <meta charset="utf-8">
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,7 +21,7 @@
         <meta name="keywords" content="themelabbd, resume, cv, portfolio, personal, developer, designer,personal resume, onepage, clean, modern">
         <meta name="author" content="John Doe"> -->
 
-        <title>बाबु पाटे</title>
+        <!-- <title>बाबु पाटे</title> -->
         
         <!-- Favicon -->
         <link rel="shortcut icon" href="<%=request.getContextPath() %>/resources/light/assets/img/favicon.png" type="image/png">

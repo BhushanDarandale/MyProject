@@ -8,7 +8,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +18,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.jwt.model.Photo;
 import com.jwt.model.PhotoAlbum;
 import com.jwt.service.EmployeeService;
 import com.jwt.service.PhotoAlbumService;
+import com.jwt.utility.AudioUtility;
+import com.jwt.utility.UploadFile;
 
 
 
@@ -93,5 +96,56 @@ public class PhotoController {
 		}
 		return "/Files/photo/" + albumName + "/" + fileName;
 
+	}
+	
+	
+	@RequestMapping(value = "/uploadPhoto", method = RequestMethod.POST)
+	public ModelAndView upload(@RequestParam("filename") List<CommonsMultipartFile> multipartFile,
+			final HttpServletRequest request) throws IOException {
+
+		String albumName = "";
+		String albumId = request.getParameter("albumid");
+		PhotoAlbum album = null;
+		if (StringUtils.isNotBlank(albumId)) {
+			int id = Integer.parseInt(albumId);
+			album = albumService.getSingleAlbum(id);
+			albumName = album.getAlbumName();
+		}
+		int totalSong = 0;
+		String albumimagepath = "/Files/default/default_album.jpg";
+
+		for (CommonsMultipartFile commonsMultipartFile : multipartFile) {
+			try {
+				String filePath = UploadFile.uploadMusic(commonsMultipartFile, albumName);
+				totalSong++;
+				Photo music = new Photo();
+
+				if (album != null) {
+					music.setAlbumImage(album.getAlbumImage());
+					music.setAlbumName(album.getAlbumName());
+				}
+
+				music.setDate(new Date());
+			/*	music.setDuration(AudioUtility.getDuration(filePath));*/
+				/*music.setLink(filePath);*/
+				music.setName(commonsMultipartFile.getOriginalFilename());
+				music.setPath(filePath);
+				music.setSize(commonsMultipartFile.getSize() / 1024 + "");
+				music.setStatus("Active");
+				music.setTime(new Date());
+				music.setTitle(commonsMultipartFile.getOriginalFilename());
+				music.setMusicAlbum(album);
+				albumService.addPhoto(music);
+
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+		if (album != null) {
+			int ts = album.getTotalImg();
+			album.setTotalImg(ts + totalSong);
+			albumService.updateAlbum(album);
+		}
+		return new ModelAndView("redirect:/loginupdate", "filename", "File Uploaded Successfully");
 	}
 }

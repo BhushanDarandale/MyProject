@@ -93,7 +93,7 @@ public class MainController {
 	
 	
 	
-	@RequestMapping(value="/loginadmin", method=RequestMethod.POST)	
+	@RequestMapping(value="/loginadmin", method=RequestMethod.GET)	
 	public ModelAndView loginadmin(HttpServletRequest request){
 		ModelAndView model = null;
 		 String name=request.getParameter("uname");  

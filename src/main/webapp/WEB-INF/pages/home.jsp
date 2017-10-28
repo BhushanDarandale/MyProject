@@ -281,6 +281,50 @@
 			<!--/.row-->
 
 			<div class="work-inner">
+			
+			
+			
+			
+			<!-- dynamic photo album -->
+			
+			
+			
+			<%-- <div class="work-inner">
+				<div class="row no-gutter">
+					<c:forEach items="${Albums}" var="albm" varStatus="loop">
+	              <div class="col-md-4 col-sm-6">
+							<div class="single-service album-img theme-color text-center wow fadeInUp" style="height: 250px"
+								data-wow-delay="0.6s"
+								style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+								<div class="" style="height: 150px">
+									<img style="height: 125px; width: 125px"
+								src="${albm.albumImage }"
+								alt="">
+									</div>
+								<h3>${albm.albumName }</h3>
+								
+								<img style="height: 40px; width: 40px"
+								src="<%=request.getContextPath()%>/resources/light/assets/img/service/plus.png"
+								alt="">
+								<!-- <p>जनतेचे प्रतिनिधित्त्व करीत असताना विविध समित्यांवर काम
+									केले आहे.</p> -->
+							</div>
+						</div>
+
+					</c:forEach>
+				</div>
+			</div> --%>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 				<div class="row no-gutter">
 					<div class="col-md-4 col-sm-6 mix webdesign">
 						<div class="single-work">
