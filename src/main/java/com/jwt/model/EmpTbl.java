@@ -1,5 +1,5 @@
 package com.jwt.model;
-// Generated Oct 31, 2017 12:30:08 PM by Hibernate Tools 5.2.3.Final
+// Generated Oct 31, 2017 6:07:26 PM by Hibernate Tools 5.2.3.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,10 +15,6 @@ import javax.persistence.Table;
 @Table(name = "emp_tbl", catalog = "babupateweb")
 public class EmpTbl implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String address;
 	private String email;
