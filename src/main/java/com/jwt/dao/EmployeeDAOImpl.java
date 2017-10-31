@@ -6,11 +6,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.jwt.model.Employee;
 import com.jwt.model.PhotoAlbum;
 
 @Repository
-public class EmployeeDAOImpl implements EmployeeDAO {
+public class EmployeeDAOImpl implements EmployeeDAO {/*
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -50,4 +49,4 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	
 
-}
+*/}

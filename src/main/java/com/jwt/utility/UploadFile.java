@@ -66,7 +66,7 @@ public class UploadFile {
 
 	}
 
-	public static String uploadMusic(CommonsMultipartFile multipartFile, String albumName) throws IOException {
+	public static String uploadPhoto(CommonsMultipartFile multipartFile, String albumName) throws IOException {
 		String fileName = null;
 		String aTempDir = null;
 		String fileLocation = null;

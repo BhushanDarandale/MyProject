@@ -7,12 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jwt.dao.EmployeeDAO;
-import com.jwt.model.Employee;
 import com.jwt.model.PhotoAlbum;
 
 @Service
 @Transactional
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {/*
 
 	@Autowired
 	private EmployeeDAO employeeDAO;
@@ -49,4 +48,4 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 
-}
+*/}

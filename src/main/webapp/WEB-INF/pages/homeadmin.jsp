@@ -101,7 +101,7 @@
 										<td>${loop.count}</td>
 										<td>${albm.albumName }</td>
 										<td>${albm.time }</td>
-										<td>${albm.totalImg }&nbsp;songs</td>
+										<td>${albm.totalImg }&nbsp; Photo</td>
 										<td>${albm.status }</td>
 										<td><button type="button" class="btn btn-default"
 												data-toggle="modal"

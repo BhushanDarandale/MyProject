@@ -47,7 +47,7 @@ public class PhotoController {
 
 		PhotoAlbum album = new PhotoAlbum();
 		if (multipartFile.getSize() != 0) {
-			String filePath = uploadAlbum(multipartFile, request.getParameter("name"));
+			String filePath = UploadFile.uploadPhoto(multipartFile, request.getParameter("name"));
 			album.setAlbumImage(filePath);
 			album.setAlbumName(request.getParameter("name"));
 			album.setStatus("Active");
@@ -63,7 +63,7 @@ public class PhotoController {
 	}
 	
 	
-	public static String uploadAlbum(CommonsMultipartFile multipartFile, String albumName) throws IOException {
+	/*public static String uploadAlbum(CommonsMultipartFile multipartFile, String albumName) throws IOException {
 		String fileName = null;
 		String aTempDir = null;
 		String fileLocation = null;
@@ -96,7 +96,7 @@ public class PhotoController {
 		}
 		return "/Files/photo/" + albumName + "/" + fileName;
 
-	}
+	}*/
 	
 	
 	@RequestMapping(value = "/uploadPhoto", method = RequestMethod.POST)
@@ -116,7 +116,7 @@ public class PhotoController {
 
 		for (CommonsMultipartFile commonsMultipartFile : multipartFile) {
 			try {
-				String filePath = UploadFile.uploadMusic(commonsMultipartFile, albumName);
+				String filePath = UploadFile.uploadPhoto(commonsMultipartFile, albumName);
 				totalSong++;
 				Photo music = new Photo();
 
@@ -134,7 +134,7 @@ public class PhotoController {
 				music.setStatus("Active");
 				music.setTime(new Date());
 				music.setTitle(commonsMultipartFile.getOriginalFilename());
-				music.setMusicAlbum(album);
+				music.setPhotoAlbum(album);
 				albumService.addPhoto(music);
 
 			} catch (Exception e) {
