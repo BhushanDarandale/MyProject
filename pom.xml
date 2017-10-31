@@ -181,11 +181,10 @@
 
 		<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
 		<dependency>
-			<groupId>quartz</groupId>
-			<artifactId>quartz</artifactId>
-			<version>1.6.5</version>
-			<type>jar</type>
-		</dependency>
+    <groupId>quartz</groupId>
+    <artifactId>quartz</artifactId>
+    <version>1.5.2</version>
+</dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
