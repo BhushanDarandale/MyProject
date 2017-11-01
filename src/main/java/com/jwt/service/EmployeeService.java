@@ -2,12 +2,12 @@ package com.jwt.service;
 
 import java.util.List;
 
-import com.jwt.model.Employee;
+/*import com.jwt.model.Employee;*/
 import com.jwt.model.PhotoAlbum;
 
 public interface EmployeeService {
 	
-	public void addEmployee(Employee employee);
+	/*public void addEmployee(Employee employee);
 
 	public List<Employee> getAllEmployees();
 
@@ -16,6 +16,6 @@ public interface EmployeeService {
 	public Employee getEmployee(int employeeid);
 
 	public Employee updateEmployee(Employee employee);
-
+*/
 	
 }
