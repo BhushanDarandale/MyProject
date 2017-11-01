@@ -5,6 +5,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
+
+import java.util.Date;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -23,14 +26,14 @@ public class News implements java.io.Serializable {
 	private String image;
 	private String title;
 	private String description;
-	private String date;
-	private String time;
+	private Date date;
+	private Date time;
 	private String status;
 
 	public News() {
 	}
 
-	public News(String image, String title, String description, String date, String time, String status) {
+	public News(String image, String title, String description, Date date, Date time, String status) {
 		this.image = image;
 		this.title = title;
 		this.description = description;
@@ -78,21 +81,21 @@ public class News implements java.io.Serializable {
 		this.description = description;
 	}
 
-	@Column(name = "date", length = 20)
-	public String getDate() {
+	@Column(name = "date")
+	public Date getDate() {
 		return this.date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
-	@Column(name = "time", length = 20)
-	public String getTime() {
+	@Column(name = "time")
+	public Date getTime() {
 		return this.time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 

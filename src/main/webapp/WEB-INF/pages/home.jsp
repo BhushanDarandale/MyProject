@@ -281,15 +281,15 @@
 			<!--/.row-->
 
 			<div class="work-inner">
-			
-			
-			
-			
-			<!-- dynamic photo album -->
-			
-			
-			
-			<%-- <div class="work-inner">
+
+
+
+
+				<!-- dynamic photo album -->
+
+
+
+				<%-- <div class="work-inner">
 				<div class="row no-gutter">
 					<c:forEach items="${Albums}" var="albm" varStatus="loop">
 	              <div class="col-md-4 col-sm-6">
@@ -314,17 +314,17 @@
 					</c:forEach>
 				</div>
 			</div> --%>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+
+
+
+
+
 				<div class="row no-gutter">
 					<div class="col-md-4 col-sm-6 mix webdesign">
 						<div class="single-work">
@@ -605,7 +605,10 @@
 				</div>
 			</div>
 			<!--/.row-->
-
+			<marquee >
+				<h4 style="color:#f7f7f7;">पत्ता : &nbsp नारायणगाव, पुणे, महाराष्ट्र    &nbsp &nbsp &nbsp &nbsp &nbsp संपर्क :&nbsp (+९१) ७०८३८४१८२८     </h4> 
+                                
+			</marquee>
 			<div class="row wow fadeInUp" data-wow-delay="0.4s"
 				style="alingn: center";>
 				<div class="col-md-6 col-sm-12 col-xs-12">
@@ -661,18 +664,16 @@
 						</div> -->
 
 						<div class="single-address theme-color">
-							
+
 							<div class="single-address theme-color">
 								<div class="fb-page"
-									data-href="https://www.facebook.com/Babu-Pate-&#x936;&#x94d;&#x930;&#x940;&#x92f;&#x94b;&#x917;&#x947;&#x936;-&#x909;&#x930;&#x94d;&#x92b;-&#x92c;&#x93e;&#x92c;&#x941;-&#x92a;&#x93e;&#x91f;&#x947;-627037160708490/"
-									data-width="1000" data-height="1200" data-small-header="false"
-									data-adapt-container-width="true" data-hide-cover="false"
-									data-show-facepile="false">
-									<blockquote
-										cite="https://www.facebook.com/Babu-Pate-&#x936;&#x94d;&#x930;&#x940;&#x92f;&#x94b;&#x917;&#x947;&#x936;-&#x909;&#x930;&#x94d;&#x92b;-&#x92c;&#x93e;&#x92c;&#x941;-&#x92a;&#x93e;&#x91f;&#x947;-627037160708490/"
+									data-href="https://www.facebook.com/babubhaupate/"
+									data-tabs="timeline" data-width="500" data-height="275"
+									data-small-header="true" data-adapt-container-width="true"
+									data-hide-cover="true" data-show-facepile="true">
+									<blockquote cite="https://www.facebook.com/babubhaupate/"
 										class="fb-xfbml-parse-ignore">
-										<a
-											href="https://www.facebook.com/Babu-Pate-&#x936;&#x94d;&#x930;&#x940;&#x92f;&#x94b;&#x917;&#x947;&#x936;-&#x909;&#x930;&#x94d;&#x92b;-&#x92c;&#x93e;&#x92c;&#x941;-&#x92a;&#x93e;&#x91f;&#x947;-627037160708490/">Babu
+										<a href="https://www.facebook.com/babubhaupate/">Babu
 											Pate-श्री.योगेश उर्फ बाबु पाटे</a>
 									</blockquote>
 								</div>
@@ -689,9 +690,9 @@
 
 
 
-						<div class="single-address theme-color">
-						 <i class="fa fa-rocket"></i>
-                                <h4>आमचा पत्ता :</h4>
+						<!-- <div class="single-address theme-color">
+							<i class="fa fa-rocket"></i>
+							<h4>आमचा पत्ता :</h4>
                                 <p>नारायणगाव, पुणे, महाराष्ट्र,</p>
 							<i class="fa fa-phone"></i>
 							<h4>आमचा फोन क्रमांक :</h4>
@@ -699,11 +700,11 @@
 								(+९१) १२३४५६७८९० <br> (+९१) ०९८७६५४३२१
 							</p>
 						</div>
-						<!--<div class="single-address theme-color">
+						<div class="single-address theme-color">
                                 <i class="fa fa-envelope"></i>
                                 <h4>Email:</h4>
                                 <p>Info@light.com <br> Info@light.com</p>
-                            </div>-->
+                            </div> -->
 
 						<!-- <div class="social-link">
 							<ul>
@@ -725,6 +726,7 @@
 
 			</div>
 			<!--/.row-->
+			
 		</div>
 		<!--/.container-->
 	</div>

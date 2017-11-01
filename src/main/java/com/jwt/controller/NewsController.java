@@ -39,8 +39,8 @@ public class NewsController {
 			news.setImage(UploadFile.uploadNewsPhoto(multipartFile));
 			news.setTitle(request.getParameter("newsname"));
 			news.setDescription(request.getParameter("newsdesc"));
-			news.setDate(new Date()+"");
-			news.setTime(new Date()+"");
+			news.setDate(new Date());
+			news.setTime(new Date());
 			news.setStatus("Active");
 			newsService.addNews(news);
 		}

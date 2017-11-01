@@ -107,9 +107,15 @@
 												data-toggle="modal"
 												data-target="#myModalAlbumUpdate${albm.id}">Update
 												Album</button></td> --%>
-										<td><button type="button" class="btn btn-default"
+										<%-- <td><button type="button" class="btn btn-default"
 												data-toggle="modal" data-target="#myModal${loop.count  }">Add
-												Photo</button></td>
+												Photo</button></td> --%>
+												
+												
+											<td>	<img style="height: 40px; width: 40px" data-toggle="modal" data-target="#myModal${loop.count  }"
+								src="<%=request.getContextPath()%>/resources/light/assets/img/service/plus.png"
+								alt=""></td>
+												
 									</tr>
 								</c:forEach>
 							</tbody>
