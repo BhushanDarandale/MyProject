@@ -1,5 +1,5 @@
 package com.jwt.model;
-// Generated Oct 31, 2017 6:07:26 PM by Hibernate Tools 5.2.3.Final
+// Generated Nov 1, 2017 5:39:43 PM by Hibernate Tools 5.2.3.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

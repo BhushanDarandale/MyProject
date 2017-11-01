@@ -100,4 +100,72 @@ public class UploadFile {
 		return "/Files/photo/" + albumName + "/" + fileName;
 
 	}
+
+	public static String uploadVideo(CommonsMultipartFile multipartFile, String parameter) {
+		String fileName = null;
+		String aTempDir = null;
+		String fileLocation = null;
+		
+		try {
+			aTempDir = System.getProperty("catalina.base") + java.io.File.separator + "webapps" + java.io.File.separator
+					+ "Files" + java.io.File.separator + "videos";
+
+			// File code
+			String nameOfFIle;
+			Calendar calendar = Calendar.getInstance();
+			Date date = calendar.getTime();
+			nameOfFIle = "videos" + date.getTime();
+			try {
+				String[] originalFileName = multipartFile.getOriginalFilename().split("\\.");
+				fileName = originalFileName[0] + nameOfFIle + "." + originalFileName[originalFileName.length - 1];
+			} catch (Exception e) {
+				fileName = multipartFile.getOriginalFilename();
+			}
+
+			fileLocation = aTempDir + java.io.File.separator + fileName;
+			new java.io.File(aTempDir).mkdirs();
+
+			java.io.File file = new java.io.File(fileLocation);
+			FileOutputStream output = new FileOutputStream(file);
+			output.write(multipartFile.getBytes());
+			output.close();
+		} catch (Exception e) {
+			return null;
+		}
+		return "/Files/videos/"+ fileName;
+	}
+
+	public static String uploadNewsPhoto(CommonsMultipartFile multipartFile) {
+		String fileName = null;
+		String aTempDir = null;
+		String fileLocation = null;
+		
+		try {
+			aTempDir = System.getProperty("catalina.base") + java.io.File.separator + "webapps" + java.io.File.separator
+					+ "Files" + java.io.File.separator + "News";
+
+			// File code
+			String nameOfFIle;
+			Calendar calendar = Calendar.getInstance();
+			Date date = calendar.getTime();
+			nameOfFIle = "News" + date.getTime();
+			try {
+				String[] originalFileName = multipartFile.getOriginalFilename().split("\\.");
+				fileName = originalFileName[0] + nameOfFIle + "." + originalFileName[originalFileName.length - 1];
+			} catch (Exception e) {
+				fileName = multipartFile.getOriginalFilename();
+			}
+
+			fileLocation = aTempDir + java.io.File.separator + fileName;
+			new java.io.File(aTempDir).mkdirs();
+
+			java.io.File file = new java.io.File(fileLocation);
+			FileOutputStream output = new FileOutputStream(file);
+			output.write(multipartFile.getBytes());
+			output.close();
+		} catch (Exception e) {
+			return null;
+		}
+		return "/Files/News/"+ fileName;
+	}
 }

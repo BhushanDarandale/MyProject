@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.jwt.model.News;
 import com.jwt.model.PhotoAlbum;
+import com.jwt.model.Video;
 import com.jwt.service.EmployeeService;
+import com.jwt.service.NewsService;
 import com.jwt.service.PhotoAlbumService;
+import com.jwt.service.VideoService;
 
 @Controller
 public class MainController {
@@ -31,6 +34,13 @@ public class MainController {
 	@Autowired
 	private EmployeeService employeeService;
 	
+	@Autowired
+	
+	private NewsService newsService;
+	
+	
+	@Autowired
+	private VideoService videoService;
 	
 	@Autowired
 	private PhotoAlbumService albumService;
@@ -113,6 +123,16 @@ public class MainController {
 	        List<PhotoAlbum> albums = albumService.getAllAlbums();
 	        model.addObject("Albums", albums);
 		
+	        List<Video> videos = videoService.getAllVideos();
+	        model.addObject("Videos", videos);
+	        
+	        
+	        
+	        
+	        List<News> news = newsService.getAllNews();
+	        model.addObject("News", news);
+	        
+	        
 		return model;
 		
 		
@@ -127,7 +147,14 @@ public class MainController {
 	        request.setAttribute("ROLE", "admin");
 	        List<PhotoAlbum> albums = albumService.getAllAlbums();
 	        model.addObject("Albums", albums);
+	        
+	        
+	        List<Video> videos = videoService.getAllVideos();
+	        model.addObject("Videos", videos);
 		
+	        
+	        List<News> news = newsService.getAllNews();
+	        model.addObject("News", news);
 		return model;
 		
 		
