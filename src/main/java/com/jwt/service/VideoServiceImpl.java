@@ -39,4 +39,11 @@ public class VideoServiceImpl implements VideoService {
 		return list;
 	}
 
+	@Override
+	public boolean deleteVideo(int videoid) {
+		// TODO Auto-generated method stub
+		videodao.deleteVideo(videoid);
+		return false;
+	}
+
 }

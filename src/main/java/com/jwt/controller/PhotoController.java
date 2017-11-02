@@ -1,14 +1,13 @@
 package com.jwt.controller;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.jwt.model.Photo;
 import com.jwt.model.PhotoAlbum;
-import com.jwt.service.EmployeeService;
 import com.jwt.service.PhotoAlbumService;
-import com.jwt.utility.AudioUtility;
 import com.jwt.utility.UploadFile;
 
 
@@ -146,6 +143,33 @@ public class PhotoController {
 			album.setTotalImg(ts + totalSong);
 			albumService.updateAlbum(album);
 		}
+		return new ModelAndView("redirect:/loginupdate", "filename", "File Uploaded Successfully");
+	}
+	
+	
+	
+	@RequestMapping(value = "/updateAlbum", method = RequestMethod.POST, headers = "Accept=application/json")
+	public ModelAndView getUpdateAlbum(Model model, @RequestParam("filename") CommonsMultipartFile multipartFile,
+			final HttpServletRequest request) throws IOException, JSONException {
+
+		String albumId = request.getParameter("albumid");
+		PhotoAlbum album = null;
+		if (StringUtils.isNotBlank(albumId)) {
+			int id = Integer.parseInt(albumId);
+			album = albumService.getSingleAlbum(id);
+			if (multipartFile.getSize() != 0) {
+				String filePath = UploadFile.uploadPhoto(multipartFile, request.getParameter("name"));
+				album.setAlbumImage(filePath);
+			}
+			
+			String a=request.getParameter("albstatus");
+			if(a!=null ){
+				album.setStatus(a);
+			}
+			album.setAlbumName(request.getParameter("name"));
+			albumService.updateAlbum(album);
+		}
+
 		return new ModelAndView("redirect:/loginupdate", "filename", "File Uploaded Successfully");
 	}
 }

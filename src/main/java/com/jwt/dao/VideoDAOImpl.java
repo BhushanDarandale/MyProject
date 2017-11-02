@@ -42,5 +42,18 @@ public class VideoDAOImpl implements VideoDAO {
 		List<Video> videos = criteria.list();
 		return videos;
 	}
+	@Override
+	public boolean deleteVideo(int videoid) {
+		// TODO Auto-generated method stub
+		Video video;
+		Session session = this.sessionFactory.getCurrentSession();
+		session = sessionFactory.getCurrentSession();
+		video = (Video)session.load(Video.class,videoid);
+	    session.delete(video);
+
+	    //This makes the pending delete to be done
+	    session.flush() ;
+		return true;
+	}
 
 }

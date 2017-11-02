@@ -10,4 +10,6 @@ public interface VideoDAO {
 
 	List<Video> getAllVideos();
 
+	boolean deleteVideo(int videoid);
+
 }

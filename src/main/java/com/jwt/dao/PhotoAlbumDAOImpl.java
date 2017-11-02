@@ -38,9 +38,9 @@ public class PhotoAlbumDAOImpl implements PhotoAlbumDAO {
 		Session session = this.sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(PhotoAlbum.class);
 		criteria.add(Restrictions.eq("id", id));
-		List<PhotoAlbum> musicAlbums = criteria.list();
-		if (musicAlbums.size() > 0) {
-			return musicAlbums.get(0);
+		List<PhotoAlbum> photoAlbums = criteria.list();
+		if (photoAlbums.size() > 0) {
+			return photoAlbums.get(0);
 		} else {
 			return null;
 		}

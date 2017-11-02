@@ -10,4 +10,6 @@ public interface VideoService {
 
 	List<Video> getAllVideos();
 
+	boolean deleteVideo(int parseInt);
+
 }

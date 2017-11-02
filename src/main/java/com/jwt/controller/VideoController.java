@@ -18,6 +18,7 @@ import com.jwt.model.PhotoAlbum;
 import com.jwt.model.Video;
 import com.jwt.service.VideoService;
 import com.jwt.utility.UploadFile;
+import com.sun.media.rtsp.protocol.Header;
 
 @Controller
 public class VideoController {
@@ -46,27 +47,20 @@ public class VideoController {
 			
 		}
 		
-		
 		return new ModelAndView("redirect:/loginupdate", "filename", "File Uploaded Successfully");
 		
-		
-		
-		
-		/*PhotoAlbum album = new PhotoAlbum();
-		if (multipartFile.getSize() != 0) {
-			String filePath = UploadFile.uploadPhoto(multipartFile, request.getParameter("videoname"));
-			album.setAlbumImage(filePath);
-			album.setAlbumName(request.getParameter("name"));
-			album.setStatus("Active");
-			album.setDate(new Date());
-			album.setTime(new Date());
-			album.setTotalImg(0);
-			albumService.addAlbum(album);
-		}*/
-
-		/*List<PhotoAlbum> albums = service.getAllAlbums(-1);
-		model.addAttribute("Albums", albums);*/
 	}
 	
-	
+	@RequestMapping(value="/deleteVideo",method = RequestMethod.POST, headers = "Accept=application/json")
+	public ModelAndView deleteVideo(Model model ,final HttpServletRequest request){
+		
+		String videoid=request.getParameter("videoid");
+		
+	if(videoid != null){
+		videoservice.deleteVideo(Integer.parseInt(videoid));
+	}
+		
+	return new ModelAndView("redirect:/loginupdate", "video", "File deleted Successfully");
+		
+	}
 }
