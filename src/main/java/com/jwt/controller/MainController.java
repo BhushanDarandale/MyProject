@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.jwt.model.News;
@@ -160,5 +162,21 @@ public class MainController {
 		
 	}
 	
+	
+	@RequestMapping(value = "/message", method = RequestMethod.GET)
+	public @ResponseBody String processAJAXRequest(
+	            @RequestParam("message") String message,
+	            @RequestParam("email") String email  ,
+	           @RequestParam("newname") String name   ){
+	        String response = "";
+	        
+	        
+	        
+	        // Process the request
+	        // Prepare the response string
+	        
+	        System.out.println(name);
+	        return response;
+	    }
 	
 }

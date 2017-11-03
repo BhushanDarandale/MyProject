@@ -48,4 +48,20 @@ public class NewsController {
 		return new ModelAndView("redirect:/loginupdate", "filename", "File Uploaded Successfully");
 		
 	}
+	
+	
+	
+	
+	@RequestMapping(value="/deleteNews",method = RequestMethod.POST, headers = "Accept=application/json")
+	public ModelAndView deleteNews(Model model ,final HttpServletRequest request){
+		
+		String newsid=request.getParameter("newsid");
+		
+	if(newsid != null){
+		newsService.deleteNews(Integer.parseInt(newsid));
+	}
+		
+	return new ModelAndView("redirect:/loginupdate", "News", "File deleted Successfully");
+		
+	}
 }

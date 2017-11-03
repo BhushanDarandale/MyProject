@@ -10,4 +10,6 @@ public interface NewsDAO {
 
 	List<News> getAllNews();
 
+	boolean deleteNews(int newsid);
+
 }

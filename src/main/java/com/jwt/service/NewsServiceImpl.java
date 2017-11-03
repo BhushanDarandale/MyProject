@@ -29,5 +29,13 @@ public class NewsServiceImpl implements NewsService {
 		List<News> news=newsDAO.getAllNews();
 		return news;
 	}
-
+	@Override
+	public boolean deleteNews(int newsid) {
+		
+		newsDAO.deleteNews(newsid);
+		return true;
+		// TODO Auto-generated method stub
+	
+	}
+	
 }

@@ -18,6 +18,68 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 </script>
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+    $('#contact-form').submit(
+        function(event) {
+           /*  var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();                
+            var data = 'firstname='
+                    + encodeURIComponent(firstname)
+                    + '&lastname='
+                    + encodeURIComponent(lastname); */
+            $.ajax({
+                url : "<c:url value='/message'/>",
+                data : $("#contact-form").serialize(),
+                
+                type : "GET",
+
+                success : function(response) {
+                	$('#newname').val('');
+                	$('#email').val('');
+                	$('#message').val('');
+                	alert("Thank You for Messeging")
+                    
+                },
+                error : function(xhr, status, error) {
+                    alert(xhr.responseText);
+                }
+            });
+            return false;
+        });
+    });
+
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+		$(function(){
+			$('#vertical-ticker').totemticker({
+				row_height	:	'100px',
+				next		:	'#ticker-next',
+				previous	:	'#ticker-previous',
+				stop		:	'#stop',
+				start		:	'#start',
+				mousestop	:	true,
+                
+			});
+		});
+
+	</script>
+
+
+
+
+
+
 <body>
 
 	<!--===== Preloader ====-->
@@ -108,150 +170,197 @@
 
 
 	<!--===== ABOUT AREA =====-->
-	<div id="about" class="about-area section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-5">
-					<div class="author-image">
-						<img
-							src="<%=request.getContextPath()%>/resources/light/assets/img/Babu-Pate.png"
-							alt="Author Image" style="height: 550px";>
-						<!--=== author image ===-->
-					</div>
+        <div id="about" class="about-area section-padding">
+            <div class="container">
+				<center>
+                <div class="row">
+                    		
+						<div class="col-md-12 mix webdesign">
+                               <img src="<%=request.getContextPath()%>/resources/light/assets/img/babu.jpg" alt="Author Image" style="width:250px; Height:250px; border-radius: 100%; border:3px solid #ff9933;">
+                        </div>
 				</div>
-
-				<div class="col-md-7">
-					<div class="about-text">
-						<h2>
-							<b>श्री.योगेश उर्फ बाबु पाटे <span class="theme-color">
-									लोकप्रतिनिधी</span> आणि <span class="theme-color">सामाजिक</span> नेता
-							</b>
-						</h2>
-						<h4>0 पासून एक विशाल साम्राज्य उभे करणारे व्यक्तिमत्व
-							नारायणगाव ग्रामपंचायत सन मध्ये सदस्य पदासाठी निवडणूक लधवली आणि
-							भरघोस मतांनी निवडून आले.</h4>
-
-
-						<!-- <input type="button" value="Click me" onclick="msg()">	 -->
-
-						<div class="col-lg-6">
-							<p>ग्रामपंचायत सदस्य म्हणून काम करत असताना छत्रपति शिवाजी
-								महाराजांच्या जन्माने पावन झालेल्या शिवजन्मभूमित समाजासाठी
-								काहीतरी करावे या उद्देशाने तरुण सहकारी घेऊन सन 2007 साली
-								महाराजांच्या नावाने 'राजे शिवछत्रपति प्रतिष्ठान' या संघटनेची
-								स्थापना केली. या संघटनेमार्फत सामाजिक काम करण्यास सुरुवात झाली.
-								पुढे या संघटनेचे एका मोठ्या वृक्षात रूपांतर झाले गावोगावी राजे
-								शिवछत्रपती प्रतिष्ठानच्या शाखा सुरु झाल्या प्रत्येक गावात राजे
-								शिवछत्रपती प्रतिष्ठानचे पदाधिकारी आणि सभासद समाजोपयोगी कार्य
-								हाती घेऊ लागले. पुणे जिल्ह्यातील सर्वात भव्य दिव्य शिवजयंती या
-								संघटनेच्या माध्यमातून पार पडू लागली.</p>
+				<div class="row">
+                    <div class="col-md-12">
+                       <div class="about-text">
+                            <h2><b>श्री.योगेश उर्फ बाबु पाटे <span class="theme-color"> लोकप्रतिनिधी</span> आणि  <span class="theme-color">सामाजिक</span> नेता </b></h2>
+							<h4>0 पासून एक विशाल साम्राज्य उभे करणारे व्यक्तिमत्व नारायणगाव ग्रामपंचायत सन मध्ये सदस्य पदासाठी निवडणूक लधवली आणि भरघोस मतांनी निवडून आले.</h4>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+                            <div class="col-lg-6">
+							<p>ग्रामपंचायत सदस्य म्हणून काम करत असताना छत्रपति शिवाजी महाराजांच्या जन्माने पावन झालेल्या शिवजन्मभूमित समाजासाठी काहीतरी करावे या उद्देशाने तरुण सहकारी घेऊन सन 2007 साली महाराजांच्या नावाने 'राजे शिवछत्रपति प्रतिष्ठान' या संघटनेची स्थापना केली.
+								या संघटनेमार्फत सामाजिक काम करण्यास सुरुवात झाली.
+								पुढे या संघटनेचे एका मोठ्या वृक्षात रूपांतर झाले गावोगावी राजे शिवछत्रपती प्रतिष्ठानच्या शाखा सुरु झाल्या प्रत्येक गावात राजे शिवछत्रपती प्रतिष्ठानचे पदाधिकारी आणि सभासद समाजोपयोगी कार्य हाती घेऊ लागले.
+								पुणे जिल्ह्यातील सर्वात भव्य दिव्य शिवजयंती या संघटनेच्या माध्यमातून पार पडू लागली.</p>
+							</div>
+							
+							<div class="col-lg-6">
+							<p>	अनेक प्रश्नांवर बाबुभाऊ यांच्या नेतृत्वाखाली प्रतिष्ठानचे सभासद वाचा फोडु लागले त्यामध्ये पाण्याचा प्रश्न,शेतकऱ्यांच्या प्रश्न,रस्त्याचा प्रश्न, कुठे कुणावर अन्याय घडत असेल त्यावर आपला आवाज उठवणारी संघटना म्हणून संपूर्ण जिल्ह्यात आपली ख्याती पसरवली.
+								जनतेचे प्रतिनिधित्व करत असताना बाबुभाऊ यांना जुन्नर तालुका शिवसेना संघटक पद भेटले,पक्ष बांधणी साठी बाबुभाउंचे कार्य उत्तम ठरले,
+								त्यांच्या या कामाची दखल घेत पक्षप्रमुख श्री.उद्धवसाहेब ठाकरे यांनी मातोश्री येथे सन्मानित केले.
+								बाबुभाऊ हे अनुभवी लोकप्रतिनिधि असून राजकीय बुद्धिचातुर्य व कौशल्य यासाठी विविध व्यासपीठांनी गौरवीले आहे.
+								</p>
+							</div>
+					</div>
+						</br>
+						  <a class="btn theme-color" href="#">Download Magazine</a>
+                           </div>
+						</center>
+                    </div>
+                </div><!--/.row-->
+            </div><!--/.container-->
+        </div>
+        <!--===== END ABOUT AREA =====-->
 
-						<div class="col-lg-6">
-							<p>अनेक प्रश्नांवर बाबुभाऊ यांच्या नेतृत्वाखाली प्रतिष्ठानचे
-								सभासद वाचा फोडु लागले त्यामध्ये पाण्याचा प्रश्न,शेतकऱ्यांच्या
-								प्रश्न,रस्त्याचा प्रश्न, कुठे कुणावर अन्याय घडत असेल त्यावर आपला
-								आवाज उठवणारी संघटना म्हणून संपूर्ण जिल्ह्यात आपली ख्याती पसरवली.
-								जनतेचे प्रतिनिधित्व करत असताना बाबुभाऊ यांना जुन्नर तालुका
-								शिवसेना संघटक पद भेटले,पक्ष बांधणी साठी बाबुभाउंचे कार्य उत्तम
-								ठरले, त्यांच्या या कामाची दखल घेत पक्षप्रमुख श्री.उद्धवसाहेब
-								ठाकरे यांनी मातोश्री येथे सन्मानित केले. बाबुभाऊ हे अनुभवी
-								लोकप्रतिनिधि असून राजकीय बुद्धिचातुर्य व कौशल्य यासाठी विविध
-								व्यासपीठांनी गौरवीले आहे.</p>
+
+	
+	<!--===== NEWS AREA =====-->
+        <div id="services" class="services-area section-padding" class="welcome-area" data-stellar-background-ratio="0.4" >
+            <div class="container">
+               <!--<div class="row">
+                   <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="section-title">
+                       <h2 style="color:black;">कार्य आणि सेवा </h2>
+                       </div>
+                   </div>
+               </div> --><!--/.row-->
+               
+                <div class="row">
+                    <div class="col-md-3  wow fadeInUp">
+						<div>
+							<h2><center><font color="#ff9933">आमचे प्रेरणास्थान  </font></center></h2>
 						</div>
-						<!--  <a class="btn theme-color" href="#">download resume</a>
-                            <a class="btn extra" href="#">Hire Me</a>-->
-					</div>
-				</div>
-			</div>
-			<!--/.row-->
-		</div>
-		<!--/.container-->
-	</div>
-	<!--===== END ABOUT AREA =====-->
+						
+						<div class="mix webdesign">
+                            <div class="single-work">
+							    <a href="#">
+                                <img src="<%=request.getContextPath()%>/resources/light/assets/img/Shivaji.png" alt="" style="width:100%, Hieght:50%";>
+								</a>
+                                <div class="item-hover">
+                                    <div class="work-table">
+                                        <div class="work-tablecell">
+                                            <div class="hover-content">
+                                                <h4>छत्रपती शिवाजी महाराज </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						
+						<div class="mix webdesign">
+                            <div class="single-work">
+							    <a href="#">
+                                <img src="<%=request.getContextPath()%>/resources/light/assets/img/Balasaheb.png" alt="" style="width:100%, Hieght:50%";>
+								</a>
+                                <div class="item-hover">
+                                    <div class="work-table">
+                                        <div class="work-tablecell">
+                                            <div class="hover-content">
+                                                <h4>बाळासाहेब ठाकरे  </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					
+					</div><!-- Amache Preranasthan-->
+					
+					<div class="col-md-6  wow fadeInUp">
+						<div>
+							<h2><center><font color="#ff9933">मान्यवरांच्या शुभेच्छा </font></center></h2>
+						</div>
+						<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-bottom:15px;">
+							  <!-- Indicators -->
+							  <ol class="carousel-indicators">
+								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+								<li data-target="#myCarousel" data-slide-to="1"></li>
+								<li data-target="#myCarousel" data-slide-to="2"></li>
+							  </ol>
 
+							  <!-- Wrapper for slides -->
+							  <div class="carousel-inner">
+								<div class="item active">
+								  <img src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg" alt="Los Angeles">
+								</div>
 
-	<!--===== SERVICES AREA =====-->
-	<div id="services" class="services-area section-padding"
-		class="welcome-area" data-stellar-background-ratio="0.4"
-		style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/service-bg-01.png);">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="section-title">
-						<h2 style="color: white;">कार्य आणि सेवा</h2>
-					</div>
-				</div>
-			</div>
-			<!--/.row-->
+								<div class="item">
+								  <img src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg" alt="Chicago">
+								</div>
 
-			<div class="row">
-				<div class="col-md-4 col-sm-6">
-					<div class="single-service theme-color text-center wow fadeInUp"
-						data-wow-delay="0.2s">
-						<div class="service-img"
-							style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/service/economical.png) "></div>
-						<h3>आर्थिक</h3>
-						<p>जनतेचे प्रतिनिधित्त्व करीत असताना विविध समित्यांवर काम केले
-							आहे.</p>
+								<div class="item">
+								  <img src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg" alt="New York">
+								</div>
+							  </div>
+
+							  <!-- Left and right controls -->
+							  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+								<span class="sr-only">Previous</span>
+							  </a>
+							  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+								<span class="sr-only">Next</span>
+							  </a>
+						</div>
+					
+					</div><!-- Manyavarancya Shubhechya-->
+					
+					<div class="col-md-3  margin-bottom  wow fadeInUp" id="wrapper1">
+						<div>
+							<h2 ><center><font color="#ff9933">बातम्या</font></center></h2>
+							<ul id="vertical-ticker" style="overflow: hidden;">
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> आमदाराचे नुसते नावच मोठे .......कृती मात्र शून्य - मा.साहेब </a>
+								</li>
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> पाटणकरांचे प्रगतीपुस्तक म्हणजे निव्वळ बनवाबनवी – मा.साहेब. </a>
+								</li>
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> आपुलकी,माया,प्रेम देणाऱ्या जनतेच्या कायम ऋणात राहणार – मा.साहेब. </a>
+								</li>
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> शंभूराज देसाईंसाहेबांना ७० वर्षांच्या वृद्धेचे आर्थिक सहाय्य </a>
+								</li>
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> पाटणकरांना २६ वर्षात एक हि घर वसविला आले नाही – मा.साहेब. </a>
+								</li>
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> सह्याद्री व्याघ्र प्रकल्प पाटणकरांच्याच काळात आला................! </a>
+								</li>
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> ......म्हणूनच पाटणकरांचा गाशा जनतेने गुंडाळला - मा.साहेब.</a>
+								</li>
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> ' साहेबांच्या ' समाधानासाठी तारळीचे पाणी माढयाला - मा. साहेब. </a>
+								</li>
+								<li style="margin-top: 10px;">
+									<a style="color:#5858FA" href="Shownews.aspx?filename=saheb11111"> आजपासून आचारसंहिता लागू,महाराष्ट्रात एकाच टप्प्यात मतदानमहाराष्ट्रात १५ ऑक्टोबरला मतदान १९ ऑक्टोबरला मतमोजणी. </a>
+								</li>
+							</ul>
+
+						</div>
+					</div><!-- Batamya-->
+                </div><!--/.row-->
+				     <!--======= Running text =======-->
+					<div class="running-section-padding">
+						<div class="fluid-container">
+							<div class="row">
+								<marquee>
+									<h3 style="color:#f7f7f7;">श्री.योगेश उर्फ बाबु पाटे <span class="theme-color"> लोकप्रतिनिधी</span> आणि  <span class="theme-color">सामाजिक</span> नेता </h3>
+								</marquee>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-service theme-color text-center wow fadeInUp"
-						data-wow-delay="0.4s">
-						<div class="service-img"
-							style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/service/Socail.png) "></div>
-						<h3>सामाजिक</h3>
-						<p>जनतेचे प्रतिनिधित्त्व करीत असताना विविध समित्यांवर काम केले
-							आहे.</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-service theme-color text-center wow fadeInUp"
-						data-wow-delay="0.6s">
-						<div class="service-img"
-							style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/service/educational.png) "></div>
-						<h3>शैक्षणिक</h3>
-						<p>जनतेचे प्रतिनिधित्त्व करीत असताना विविध समित्यांवर काम केले
-							आहे.</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-service theme-color text-center wow fadeInUp"
-						data-wow-delay="0.8s">
-						<div class="service-img"
-							style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/service/Industrial.png) "></div>
-						<h3>ओद्योगिक</h3>
-						<p>जनतेचे प्रतिनिधित्त्व करीत असताना विविध समित्यांवर काम केले
-							आहे.</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-service theme-color text-center wow fadeInUp"
-						data-wow-delay="1.0s">
-						<div class="service-img"
-							style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/service/Devetional.png) "></div>
-						<h3>धार्मिक</h3>
-						<p>जनतेचे प्रतिनिधित्त्व करीत असताना विविध समित्यांवर काम केले
-							आहे.</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="single-service theme-color text-center wow fadeInUp"
-						data-wow-delay="1.2s">
-						<div class="service-img"
-							style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/service/political.png) "></div>
-						<h3>राजकीय</h3>
-						<p>जनतेचे प्रतिनिधित्त्व करीत असताना विविध समित्यांवर काम केले
-							आहे.</p>
-					</div>
-				</div>
-			</div>
-			<!--/.row-->
-		</div>
-		<!--/.container-->
-	</div>
-	<!--====== END SERVICES AREA ======-->
+		
+		<!--===== END Runnong text =====-->
+            </div><!--/.container-->
+			  
+        </div>
+        <!--====== END NEWS AREA ======-->
+	
 
 
 	<!--====== WORK AREA ======-->
@@ -259,10 +368,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="section-title">
+					<div class="section-title" style="margin-bottom:10px;">
 						<h2>छायांकित विशलेषण</h2>
-						<p>आर्थिक धोरणांसह विविध विषयांचा व्यासंग व विश्लेषण यासाठी द
-							यांची ख्याती आहे.</p>
 					</div>
 				</div>
 			</div>
@@ -270,11 +377,11 @@
 
 			<div class="row">
 				<ul class="work-list text-center">
-					<li class="filter theme-color" data-filter="all">सर्व</li>
-					<li class="filter theme-color" data-filter=".webdesign">शिवजन्मोत्सव
+					<!-- <li class="filter theme-color" data-filter="all">सर्व</li> -->
+					<li class="filter theme-color" data-filter=".webdesign">फोटो 
 					</li>
-					<li class="filter theme-color" data-filter=".development">वृक्षारोपण</li>
-					<li class="filter theme-color" data-filter=".grapich">समाजकल्याण
+					<li class="filter theme-color" data-filter=".development">विडिओ </li>
+					<li class="filter theme-color" data-filter=".grapich">ऑडिओ 
 					</li>
 				</ul>
 			</div>
@@ -599,7 +706,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="section-title">
+					<div class="section-title" style="margin-bottom:10px;">
 						<h2 style="color: white;">आमचा संपर्क</h2>
 					</div>
 				</div>
@@ -612,15 +719,17 @@
 			<div class="row wow fadeInUp" data-wow-delay="0.4s"
 				style="alingn: center";>
 				<div class="col-md-6 col-sm-12 col-xs-12">
+					
+					
 					<div class="contact-form">
-						<form id="contact-form" method="post"
-							action="http://programmerhasan.com/demos/light/light/contact.php">
+						<form id="contact-form" method="GET" action="/message"
+							>
 							<div class="messages"></div>
 							<div class="controls">
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<input id="form_name" type="text" name="name"
+											<input id="newname" type="text" name="newname"
 												class="form-control" placeholder="नाव*" required="required"
 												data-error="Name is required.">
 											<div class="help-block with-errors"></div>
@@ -628,7 +737,7 @@
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input id="form_email" type="email" name="email"
+											<input id="email" type="email" name="email"
 												class="form-control" placeholder="ई मेल*"
 												required="required" data-error="Valid email is required.">
 											<div class="help-block with-errors"></div>
@@ -638,7 +747,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea id="form_message" name="message"
+											<textarea id="message" name="message"
 												class="form-control" placeholder="संदेश*" rows="7"
 												required="required" data-error="Please,leave us a message."></textarea>
 											<div class="help-block with-errors"></div>
@@ -668,7 +777,7 @@
 							<div class="single-address theme-color">
 								<div class="fb-page"
 									data-href="https://www.facebook.com/babubhaupate/"
-									data-tabs="timeline" data-width="500" data-height="275"
+									data-tabs="timeline" data-width="500" data-height="255"
 									data-small-header="true" data-adapt-container-width="true"
 									data-hide-cover="true" data-show-facepile="true">
 									<blockquote cite="https://www.facebook.com/babubhaupate/"

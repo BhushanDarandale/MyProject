@@ -10,4 +10,6 @@ public interface NewsService {
 
 	List<News> getAllNews();
 
+	boolean deleteNews(int parseInt);
+
 }

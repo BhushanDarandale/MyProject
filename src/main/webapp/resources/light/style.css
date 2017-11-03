@@ -1594,3 +1594,38 @@ NOTE: This is main stylesheet of the template.
      color: #fff;
      margin: 0px;
  }
+ 
+ 
+ 
+ 
+  /*==============================
+			13 NEWS
+================================*/
+.margin-bottom {
+    margin-bottom: 10px;
+}
+.b3 {
+    background: none repeat scroll 0 0 #FB;
+    display: block;
+    padding: 1.25em;
+    width: 80%;
+    height: 26em;
+    border: groove;
+    overflow: scroll;
+}
+.margin > .l-3 {
+    width: 25%;
+}
+
+
+
+
+.running-section-padding{
+	padding-top:20px;
+	margin-top:10px;
+	background-color:#ff9933;
+	color:white;
+	
+	
+}
+ 

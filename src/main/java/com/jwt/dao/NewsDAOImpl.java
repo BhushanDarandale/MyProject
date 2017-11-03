@@ -33,4 +33,18 @@ public class NewsDAOImpl implements NewsDAO {
 		List<News> news = criteria.list();
 		return news;
 	}
+
+	@Override
+	public boolean deleteNews(int newsid) {
+		// TODO Auto-generated method stub
+		News news;
+				Session session = this.sessionFactory.getCurrentSession();
+				session = sessionFactory.getCurrentSession();
+				news = (News)session.load(News.class,newsid);
+			    session.delete(news);
+
+			    //This makes the pending delete to be done
+			    session.flush() ;
+				return true;
+	}
 }
