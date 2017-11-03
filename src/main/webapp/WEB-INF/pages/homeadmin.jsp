@@ -77,11 +77,47 @@
 	
 	
 </script>
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+    $('#sampleForm').submit(
+        function(event) {
+           /*  var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();                
+            var data = 'firstname='
+                    + encodeURIComponent(firstname)
+                    + '&lastname='
+                    + encodeURIComponent(lastname); */
+            $.ajax({
+                url : "<c:url value='/profile'/>",
+                data : $("#sampleForm").serialize(),
+                
+                type : "GET",
+
+                success : function(response) {
+                	$('#firstname').val('');
+                	$('#lastname').val('');
+                	alert("Thank You for Messeging")
+                    
+                },
+                error : function(xhr, status, error) {
+                    alert(xhr.responseText);
+                }
+            });
+            return false;
+        });
+    });
+
+
+</script>
 </head>
 
 
 <body>
-
 	<!--===== Preloader ====-->
 	<div class="preloader">
 		<div class="spinner">
@@ -92,6 +128,44 @@
 			<div class="rect5"></div>
 		</div>
 	</div>
+
+
+
+
+
+<!-- <form id="sampleForm" method="GET" action="/bsd/profile">
+      
+ 
+<div>
+         <input type="text" name="newname" id="newname">
+     </div>
+ 
+ 
+      
+ 
+<div>
+         <input type="email" name="email" id="email">
+     </div>
+ 
+ <div>
+         <textarea type="text" name="messege" id="email">
+     </div>
+ 
+      
+ 
+<div>
+         <button type="submit" name="submit">Submit</button>
+     </div>
+ 
+ 
+</form> -->
+
+
+
+
+
+
+
 
 
 	<!--====== WORK AREA ======-->
@@ -424,7 +498,7 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>Video Name</th>
+									<th>News Title</th>
 									<th>Release Date</th>
 									<!-- <th>Status</th> -->
 									<th>Delete</th>
@@ -450,7 +524,7 @@
 
 						<c:forEach items="${News}" var="news" varStatus="loop">
 							<!-- Modal -->
-							<div class="modal fade" id="myModal1${loop.count}" role="dialog">
+							<div class="modal fade" id="myModal2${loop.count}" role="dialog">
 								<div class="modal-dialog">
 
 									<!-- Modal content-->

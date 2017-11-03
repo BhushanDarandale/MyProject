@@ -18,6 +18,43 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 </script>
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+    $('#contact-form').submit(
+        function(event) {
+           /*  var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();                
+            var data = 'firstname='
+                    + encodeURIComponent(firstname)
+                    + '&lastname='
+                    + encodeURIComponent(lastname); */
+            $.ajax({
+                url : "<c:url value='/message'/>",
+                data : $("#contact-form").serialize(),
+                
+                type : "GET",
+
+                success : function(response) {
+                	$('#newname').val('');
+                	$('#email').val('');
+                	$('#message').val('');
+                	alert("Thank You for Messeging")
+                    
+                },
+                error : function(xhr, status, error) {
+                    alert(xhr.responseText);
+                }
+            });
+            return false;
+        });
+    });
+
+
+</script>
 <body>
 
 	<!--===== Preloader ====-->
@@ -612,15 +649,17 @@
 			<div class="row wow fadeInUp" data-wow-delay="0.4s"
 				style="alingn: center";>
 				<div class="col-md-6 col-sm-12 col-xs-12">
+					
+					
 					<div class="contact-form">
-						<form id="contact-form" method="post"
-							action="http://programmerhasan.com/demos/light/light/contact.php">
+						<form id="contact-form" method="GET" action="/message"
+							>
 							<div class="messages"></div>
 							<div class="controls">
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<input id="form_name" type="text" name="name"
+											<input id="newname" type="text" name="newname"
 												class="form-control" placeholder="नाव*" required="required"
 												data-error="Name is required.">
 											<div class="help-block with-errors"></div>
@@ -628,7 +667,7 @@
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input id="form_email" type="email" name="email"
+											<input id="email" type="email" name="email"
 												class="form-control" placeholder="ई मेल*"
 												required="required" data-error="Valid email is required.">
 											<div class="help-block with-errors"></div>
@@ -638,7 +677,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea id="form_message" name="message"
+											<textarea id="message" name="message"
 												class="form-control" placeholder="संदेश*" rows="7"
 												required="required" data-error="Please,leave us a message."></textarea>
 											<div class="help-block with-errors"></div>
