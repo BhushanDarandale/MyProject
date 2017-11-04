@@ -1,4 +1,4 @@
-package com.jwt.dao;
+package com.jwt.dao.impl;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.jwt.dao.PhotoAlbumDAO;
 import com.jwt.model.Photo;
 import com.jwt.model.PhotoAlbum;
 

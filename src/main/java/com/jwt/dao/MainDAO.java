@@ -1,10 +1,6 @@
 package com.jwt.dao;
 
-import java.util.List;
-/*import com.jwt.model.Employee;*/
-import com.jwt.model.PhotoAlbum;
-
-public interface EmployeeDAO {
+public interface MainDAO {
 
 	/*public void addEmployee(Employee employee);
 

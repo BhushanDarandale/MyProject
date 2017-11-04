@@ -1,11 +1,6 @@
 package com.jwt.service;
 
-import java.util.List;
-
-/*import com.jwt.model.Employee;*/
-import com.jwt.model.PhotoAlbum;
-
-public interface EmployeeService {
+public interface MainService {
 	
 	/*public void addEmployee(Employee employee);
 

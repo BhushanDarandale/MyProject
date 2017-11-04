@@ -1,17 +1,13 @@
-package com.jwt.service;
+package com.jwt.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.jwt.dao.EmployeeDAO;
-import com.jwt.model.PhotoAlbum;
+import com.jwt.service.MainService;
 
 @Service
 @Transactional
-public class EmployeeServiceImpl implements EmployeeService {/*
+public class MainServiceImpl implements MainService {/*
 
 	@Autowired
 	private EmployeeDAO employeeDAO;

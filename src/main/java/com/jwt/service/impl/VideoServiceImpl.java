@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.jwt.service;
+package com.jwt.service.impl;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jwt.dao.VideoDAO;
 import com.jwt.model.Video;
+import com.jwt.service.VideoService;
 
 /**
  * @author Bhushan

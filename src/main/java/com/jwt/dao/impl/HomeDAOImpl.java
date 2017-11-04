@@ -1,13 +1,13 @@
-package com.jwt.dao;
+package com.jwt.dao.impl;
 
 import java.util.List;
-
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.jwt.dao.HomeDAO;
 import com.jwt.model.Home;
 
 public class HomeDAOImpl implements HomeDAO {

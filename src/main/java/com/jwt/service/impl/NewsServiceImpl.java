@@ -1,4 +1,4 @@
-package com.jwt.service;
+package com.jwt.service.impl;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jwt.dao.NewsDAO;
 import com.jwt.model.News;
+import com.jwt.service.NewsService;
 
 @Service
 @Transactional
