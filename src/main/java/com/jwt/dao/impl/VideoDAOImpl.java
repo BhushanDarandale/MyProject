@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.jwt.dao.VideoDAO;
+import com.jwt.model.Personal;
 import com.jwt.model.PhotoAlbum;
 import com.jwt.model.Video;
 
@@ -55,6 +56,19 @@ public class VideoDAOImpl implements VideoDAO {
 	    //This makes the pending delete to be done
 	    session.flush() ;
 		return true;
+	}
+	@Override
+	public List<Personal> getPersonal() {
+		Session session = this.sessionFactory.getCurrentSession();
+		Criteria criteria = session.createCriteria(Personal.class);
+		List<Personal> personals = criteria.list();
+		return personals;
+	}
+	@Override
+	public boolean addPersonal(Personal personal) {
+		sessionFactory.getCurrentSession().saveOrUpdate(personal);
+		return true;
+		
 	}
 
 }

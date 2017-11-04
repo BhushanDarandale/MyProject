@@ -18,6 +18,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.jwt.model.News;
+import com.jwt.model.Notice;
 import com.jwt.service.NewsService;
 import com.jwt.utility.UploadFile;
 
@@ -64,4 +65,40 @@ public class NewsController {
 	return new ModelAndView("redirect:/loginupdate", "News", "File deleted Successfully");
 		
 	}
+	
+	
+	
+	
+	@RequestMapping( value="/addNotice",method=RequestMethod.POST, headers="Accept=application/json")
+	public  ModelAndView addNotice(Model model,final HttpServletRequest request){
+		
+		Notice notice= new Notice();
+		notice.setDate(new Date());
+		notice.setNoticetext(request.getParameter("noticename"));
+		notice.setStatus("Active");
+	
+			
+			newsService.addNotice(notice);
+		
+		return new ModelAndView("redirect:/loginupdate", "filename", "File Uploaded Successfully");
+		
+	}
+	
+	
+	
+	
+	@RequestMapping(value="/deleteNotice",method = RequestMethod.POST, headers = "Accept=application/json")
+	public ModelAndView deleteNotice(Model model ,final HttpServletRequest request){
+		
+		String newsid=request.getParameter("noticeid");
+		
+	if(newsid != null){
+		newsService.deleteNotice(Integer.parseInt(newsid));
+	}
+		
+	return new ModelAndView("redirect:/loginupdate", "News", "File deleted Successfully");
+		
+	}
+	
+	
 }

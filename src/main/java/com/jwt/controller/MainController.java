@@ -1,6 +1,7 @@
 package com.jwt.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.jwt.model.Contact;
 import com.jwt.model.News;
+import com.jwt.model.Notice;
+import com.jwt.model.Personal;
 import com.jwt.model.PhotoAlbum;
 import com.jwt.model.Video;
 import com.jwt.service.MainService;
@@ -33,7 +37,7 @@ public class MainController {
 	}
 
 	@Autowired
-	private MainService employeeService;
+	private MainService Service;
 	
 	@Autowired
 	
@@ -128,7 +132,8 @@ public class MainController {
 	        model.addObject("Videos", videos);
 	        
 	        
-	        
+	        /*List<Personal> personal = videoService.getPersonal();
+	        model.addObject("Personal", personal);*/
 	        
 	        List<News> news = newsService.getAllNews();
 	        model.addObject("News", news);
@@ -156,6 +161,15 @@ public class MainController {
 	        
 	        List<News> news = newsService.getAllNews();
 	        model.addObject("News", news);
+	        
+	        
+	        List<Notice> notices = newsService.getAllNotice();
+	        model.addObject("Notices", notices);
+	        
+	        
+	        /*List<Personal> personal = videoService.getPersonal();
+	        model.addObject("Personal", personal);*/
+	        
 		return model;
 		
 		
@@ -168,11 +182,13 @@ public class MainController {
 	            @RequestParam("email") String email  ,
 	           @RequestParam("newname") String name   ){
 	        String response = "";
+	        Contact contact=new Contact();
+	        contact.setDate(new Date());
+	        contact.setName(name);
+	        contact.setMessage(message);
+	        contact.setEmail1(email);
+	        Service.addContact(contact);
 	        
-	        
-	        
-	        // Process the request
-	        // Prepare the response string
 	        
 	        System.out.println(name);
 	        return response;

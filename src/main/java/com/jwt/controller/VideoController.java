@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.jwt.model.Personal;
 import com.jwt.model.PhotoAlbum;
 import com.jwt.model.Video;
 import com.jwt.service.VideoService;
@@ -61,6 +62,30 @@ public class VideoController {
 	}
 		
 	return new ModelAndView("redirect:/loginupdate", "video", "File deleted Successfully");
+		
+	}
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value = "/addPersonal", method = RequestMethod.POST, headers = "Accept=application/json")
+	public ModelAndView addPersonal(Model model, @RequestParam("filename") CommonsMultipartFile multipartFile,
+			final HttpServletRequest request) throws IOException {
+
+		Personal personal=new Personal();
+		
+		if(multipartFile.getSize() !=0){
+			String filePath = UploadFile.uploadNewsPhoto(multipartFile);
+			personal.setDate(new Date());
+			personal.setHeader( request.getParameter("header"));
+			personal.setName( request.getParameter("pername"));
+			personal.setStatus("Active");
+			videoservice.addPersonal(personal);
+		}
+		
+		return new ModelAndView("redirect:/loginupdate", "filename", "File Uploaded Successfully");
 		
 	}
 }

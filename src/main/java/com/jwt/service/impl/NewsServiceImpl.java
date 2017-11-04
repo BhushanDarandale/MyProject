@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jwt.dao.NewsDAO;
 import com.jwt.model.News;
+import com.jwt.model.Notice;
 import com.jwt.service.NewsService;
 
 @Service
@@ -37,6 +38,24 @@ public class NewsServiceImpl implements NewsService {
 		return true;
 		// TODO Auto-generated method stub
 	
+	}
+	@Override
+	public boolean addNotice(Notice notice) {
+		// TODO Auto-generated method stub
+		newsDAO.addNotice(notice);
+		return true;
+	}
+	@Override
+	public List<Notice> getAllNotice() {
+		// TODO Auto-generated method stub
+		
+		List<Notice> notices=newsDAO.getAllNotice();
+		return notices;
+	}
+	@Override
+	public boolean deleteNotice(int noticeid) {
+		newsDAO.deleteNotice(noticeid);
+		return true;
 	}
 	
 }

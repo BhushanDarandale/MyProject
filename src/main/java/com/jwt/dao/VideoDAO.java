@@ -2,6 +2,7 @@ package com.jwt.dao;
 
 import java.util.List;
 
+import com.jwt.model.Personal;
 import com.jwt.model.Video;
 
 public interface VideoDAO {
@@ -11,5 +12,9 @@ public interface VideoDAO {
 	List<Video> getAllVideos();
 
 	boolean deleteVideo(int videoid);
+
+	List<Personal> getPersonal();
+
+	boolean addPersonal(Personal personal);
 
 }

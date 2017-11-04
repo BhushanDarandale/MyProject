@@ -1,5 +1,5 @@
 package com.jwt.model;
-// Generated Nov 4, 2017 11:05:55 AM by Hibernate Tools 4.3.5.Final
+// Generated Nov 4, 2017 3:05:00 PM by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -29,6 +29,7 @@ public class PhotoAlbum implements java.io.Serializable {
 	private String status;
 	private Date date;
 	private Date time;
+	
 
 	public PhotoAlbum() {
 	}
@@ -111,7 +112,5 @@ public class PhotoAlbum implements java.io.Serializable {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-
-
 
 }

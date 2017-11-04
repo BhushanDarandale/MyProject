@@ -1,6 +1,10 @@
 package com.jwt.dao;
 
+import com.jwt.model.Contact;
+
 public interface MainDAO {
+
+	boolean addContact(Contact contact);
 
 	/*public void addEmployee(Employee employee);
 

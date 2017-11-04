@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.jwt.dao.NewsDAO;
 import com.jwt.model.News;
+import com.jwt.model.Notice;
 
 @Repository
 public class NewsDAOImpl implements NewsDAO {
@@ -46,5 +47,33 @@ public class NewsDAOImpl implements NewsDAO {
 			    //This makes the pending delete to be done
 			    session.flush() ;
 				return true;
+	}
+
+	@Override
+	public boolean addNotice(Notice notice) {
+		sessionFactory.getCurrentSession().saveOrUpdate(notice);
+		return true;
+	}
+
+	@Override
+	public List<Notice> getAllNotice() {
+		Session session = this.sessionFactory.getCurrentSession();
+		Criteria criteria = session.createCriteria(Notice.class);
+		List<Notice> notices = criteria.list();
+		return notices;
+		
+	}
+
+	@Override
+	public boolean deleteNotice(int noticeid) {
+		Notice notice;
+		Session session = this.sessionFactory.getCurrentSession();
+		session = sessionFactory.getCurrentSession();
+		notice = (Notice)session.load(Notice.class,noticeid);
+	    session.delete(notice);
+
+	    //This makes the pending delete to be done
+	    session.flush() ;
+		return true;
 	}
 }

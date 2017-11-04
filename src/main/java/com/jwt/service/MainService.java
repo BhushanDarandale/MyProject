@@ -1,6 +1,10 @@
 package com.jwt.service;
 
+import com.jwt.model.Contact;
+
 public interface MainService {
+
+	boolean addContact(Contact contact);
 	
 	/*public void addEmployee(Employee employee);
 

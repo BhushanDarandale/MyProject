@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jwt.dao.VideoDAO;
+import com.jwt.model.Personal;
 import com.jwt.model.Video;
 import com.jwt.service.VideoService;
 
@@ -47,4 +48,15 @@ public class VideoServiceImpl implements VideoService {
 		return false;
 	}
 
+	@Override
+	public List<Personal> getPersonal() {
+		List<Personal> list=videodao.getPersonal();
+		return list;
+	}
+
+	@Override
+	public boolean addPersonal(Personal personal) {
+		videodao.addPersonal(personal);
+		return true;
+	}
 }

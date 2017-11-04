@@ -3,6 +3,7 @@ package com.jwt.service;
 import java.util.List;
 
 import com.jwt.model.News;
+import com.jwt.model.Notice;
 
 public interface NewsService {
 
@@ -11,5 +12,11 @@ public interface NewsService {
 	List<News> getAllNews();
 
 	boolean deleteNews(int parseInt);
+
+	boolean addNotice(Notice notice);
+
+	List<Notice> getAllNotice();
+
+	boolean deleteNotice(int parseInt);
 
 }

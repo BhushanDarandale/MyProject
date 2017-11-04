@@ -1,18 +1,29 @@
 package com.jwt.dao.impl;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.jwt.dao.MainDAO;
+import com.jwt.model.Contact;
 
 @Repository
-public class MainDAOImpl implements MainDAO {/*
+public class MainDAOImpl implements MainDAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	@Override
+	public boolean addContact(Contact contact) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().saveOrUpdate(contact);
+		return true;
+	}/*
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	public void addEmployee(Employee employee) {
 		sessionFactory.getCurrentSession().saveOrUpdate(employee);
-
 	}
 
 	@SuppressWarnings("unchecked")
