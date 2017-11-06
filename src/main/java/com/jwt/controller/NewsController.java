@@ -3,6 +3,7 @@
  */
 package com.jwt.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -70,14 +71,16 @@ public class NewsController {
 	
 	
 	@RequestMapping( value="/addNotice",method=RequestMethod.POST, headers="Accept=application/json")
-	public  ModelAndView addNotice(Model model,final HttpServletRequest request){
-		
+	public  ModelAndView addNotice(Model model,final HttpServletRequest request) throws UnsupportedEncodingException{
+		request.setCharacterEncoding("UTF-8");
 		Notice notice= new Notice();
 		notice.setDate(new Date());
 		notice.setNoticetext(request.getParameter("noticename"));
+		//notice.setNoticetext("मराठीमध्ये टाइप करा");
+		
 		notice.setStatus("Active");
 	
-			
+		
 			newsService.addNotice(notice);
 		
 		return new ModelAndView("redirect:/loginupdate", "filename", "File Uploaded Successfully");

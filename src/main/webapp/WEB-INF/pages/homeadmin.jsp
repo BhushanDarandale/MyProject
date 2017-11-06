@@ -1,12 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<meta charset="UTF-8"> --%>
+	
+	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- <title>बाबु पाटे</title> -->
-
+<!-- <meta charset="utf-8">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/light/assets/js/jquery.dataTables.min.css" />

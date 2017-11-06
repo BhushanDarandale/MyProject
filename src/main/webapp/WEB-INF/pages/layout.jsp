@@ -8,14 +8,13 @@
 
 <!-- Mirrored from theme-brothers.com/AquraHTML/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 May 2017 06:20:04 GMT -->
 <head>
-<meta charset="UTF-8">
 <meta name="HandheldFriendly" content="true" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!-- <title>बाबु पाटे</title> -->
 <head>
-        <meta charset="utf-8">
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <!--  <meta charset="UTF-8">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Light is a Personal Portfolio Template">
         <meta name="keywords" content="themelabbd, resume, cv, portfolio, personal, developer, designer,personal resume, onepage, clean, modern">
