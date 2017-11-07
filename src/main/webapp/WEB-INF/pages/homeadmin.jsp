@@ -126,6 +126,8 @@ $(document).ready(function() {
 
 
 </script>
+
+
 </head>
 
 
@@ -140,6 +142,93 @@ $(document).ready(function() {
 			<div class="rect5"></div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+
+	<div>
+		<!-- Trigger the modal with a button -->
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+			data-target="#myModal2">Open Modal</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal2" role="dialog">
+			<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<div>
+							<div id="myCarousel" class="carousel slide" data-ride="carousel"
+								style="margin-bottom: 15px;">
+
+
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner">
+									<div class="item active">
+										<img
+											src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"
+											alt="Los Angeles">
+									</div>
+
+									<div class="item">
+										<img
+											src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
+											alt="Chicago">
+									</div>
+
+									<div class="item">
+										<img
+											src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
+											alt="New York">
+									</div>
+								</div>
+
+								<!-- Left and right controls -->
+								<a class="left carousel-control" href="#myCarousel"
+									data-slide="prev"> <span
+									class="glyphicon glyphicon-chevron-left"></span> <span
+									class="sr-only">Previous</span>
+								</a> <a class="right carousel-control" href="#myCarousel"
+									data-slide="next"> <span
+									class="glyphicon glyphicon-chevron-right"></span> <span
+									class="sr-only">Next</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -171,11 +260,6 @@ $(document).ready(function() {
  
  
 </form> -->
-
-
-
-
-
 
 
 
@@ -754,7 +838,7 @@ $(document).ready(function() {
 
 
 
-	<%-- <div id="work" class="work-area ">
+	<div id="work" class="work-area ">
 
 		<div class="container">
 			<div class="row">
@@ -767,12 +851,12 @@ $(document).ready(function() {
 
 
 							<c:choose>
-								<c:when test="${Personal eq null }">
+								<c:when test="${empty Personal }">
 
 									<button type="button" style="padding: 0" class="btn"
 										data-toggle="modal" data-target="#addPersonal">Add
 										Personal</button>
-
+ 
 								</c:when>
 
 								<c:otherwise>
@@ -802,29 +886,29 @@ $(document).ready(function() {
 										</div>
 										<div class="modal-body">
 											<form name="formUpdate${loop.count }"
-												action="updateAlbum?albumid=${personal.id }" method="post"
+												action="updatePersonal?id=${personal.id }" method="post"
 												enctype="multipart/form-data" class="comment-form">
-												<input type="text" name="header" id="header"
+												<input type="text" name="header" id="header" required="required"
 													value="${personal.header }" style="padding: 10px"
 													placeholder="Enter Header">
 
 												<div
-													style="width: 100%; height: 45px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
-													<textarea type="text" name="para1" id="para1"
-														value="${personal.para1 }" style="padding: 10px">
+													style="width: 100%; height: 45px; margin-top: 30px; margin-bottom: 10px;  vertical-align: middle;">
+													<textarea  name="para1" id="para1" 
+													 style="padding: 10px; width: 100%" required="required"><c:out value="${personal.para1 }" /></textarea>
 												
 												</div>
 
 
 												<div
-													style="width: 100%; height: 45px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
-													<textarea type="text" name="para2" id="para2"
-														value="${personal.para2 }" style="padding: 10px">
+													style="width: 100%; height: 45px; margin-top: 30px; margin-bottom: 10px;  vertical-align: middle;">
+													<textarea  name="para2" id="para2"
+														 style="padding: 10px; width: 100%" required="required"><c:out value="${personal.para2 }" /></textarea>
 												
 												</div>
 
 												<div
-													style="width: 100%; height: 45px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
+													style="width: 100%; height: 45px; margin-top: 30px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
 													<input type="file" name="filename" id="name"
 														style="padding: 10px" accept="image/*">
 												</div>
@@ -871,25 +955,25 @@ $(document).ready(function() {
 
 
 							<input type="text" name="header" id="header"
-								style="padding: 10px" placeholder="Enter Header">
+								style="padding: 10px; width: 100%" placeholder="Enter Header">
 
 							<div
-								style="width: 100%; height: 45px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
-								<textarea type="text" name="para1" id="para1"
-									style="padding: 10px">
+								style="width: 100%; height: 45px; margin-top: 10px; margin-bottom: 10px;  vertical-align: middle;">
+								<textarea  name="para1" id="para1" style="padding: 10px; width: 100%" placeholder="Enter paragraph one"
+									></textarea>
 												
 							</div>
 
 
 							<div
-								style="width: 100%; height: 45px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
-								<textarea type="text" name="para2" id="para2"
-								 style="padding: 10px">
+								style="width: 100%; height: 45px; margin-top: 30px; margin-bottom: 10px;vertical-align: middle;">
+								<textarea  name="para2" id="para2" style="padding: 10px; width: 100%" placeholder="Enter paragraph two"
+								 ></textarea>
 												
 							</div>
 
 							<div
-								style="width: 100%; height: 45px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
+								style="width: 100%; height: 45px; margin-top: 30px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
 								<input type="file" name="filename" id="name"
 									style="padding: 10px" accept="image/*">
 							</div>
@@ -908,7 +992,7 @@ $(document).ready(function() {
 
 			</div>
 		</div>
-	</div> --%>
+	</div>
 
 
 

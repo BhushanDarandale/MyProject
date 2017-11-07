@@ -22,6 +22,8 @@
 
         <!-- <title>बाबु पाटे</title> -->
         
+        
+        
         <!-- Favicon -->
         <link rel="shortcut icon" href="<%=request.getContextPath() %>/resources/light/assets/img/favicon.png" type="image/png">
 

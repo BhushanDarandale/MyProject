@@ -50,13 +50,7 @@ public class MainController {
 	@Autowired
 	private PhotoAlbumService albumService;
 
-	@RequestMapping(value = "/")
-	public ModelAndView listEmployee(ModelAndView model) throws IOException {
-		/*List<Employee> listEmployee = employeeService.getAllEmployees();
-		model.addObject("listEmployee", listEmployee);*/
-		model.setViewName("home");
-		return model;
-	}
+	
 
 	@RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
 	public ModelAndView newContact(ModelAndView model) {
@@ -132,8 +126,8 @@ public class MainController {
 	        model.addObject("Videos", videos);
 	        
 	        
-	        /*List<Personal> personal = videoService.getPersonal();
-	        model.addObject("Personal", personal);*/
+	        List<Personal> personal = videoService.getPersonal();
+	        model.addObject("Personal", personal);
 	        
 	        List<News> news = newsService.getAllNews();
 	        model.addObject("News", news);
@@ -148,7 +142,7 @@ public class MainController {
 	public ModelAndView loginupdate(HttpServletRequest request){
 		ModelAndView model = null;
 		 
-	        model = new ModelAndView("homeadmin");
+	        model = new ModelAndView("home");
 	        
 	        request.setAttribute("ROLE", "admin");
 	        List<PhotoAlbum> albums = albumService.getAllAlbums();
@@ -167,8 +161,8 @@ public class MainController {
 	        model.addObject("Notices", notices);
 	        
 	        
-	        /*List<Personal> personal = videoService.getPersonal();
-	        model.addObject("Personal", personal);*/
+	        List<Personal> personal = videoService.getPersonal();
+	        model.addObject("Personal", personal);
 	        
 		return model;
 		
