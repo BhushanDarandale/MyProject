@@ -166,141 +166,200 @@
 
 	<!--===== ABOUT AREA =====-->
 	<div id="about" class="about-area section-padding">
-		
 
-			<div class="container">
-				<center>
-					<div class="row">
 
-						<div class="col-md-12 mix webdesign">
-						
-						
+		<div class="container">
+			<center>
+				<div class="row">
+
+					<div class="col-md-12 mix webdesign">
+
+
 						<c:choose>
-									<c:when test="${empty Personal }">
-										<img
-								src="<%=request.getContextPath()%>/resources/light/assets/img/babu.jpg"
-								alt="Author Image"
-								style="width: 250px; Height: 250px; border-radius: 100%; border: 3px solid #ff9933;">
+							<c:when test="${empty Personal }">
+								<img
+									src="<%=request.getContextPath()%>/resources/light/assets/img/babu.jpg"
+									alt="Author Image"
+									style="width: 250px; Height: 250px; border-radius: 100%; border: 3px solid #ff9933;">
 
-									</c:when>
+							</c:when>
 
-									<c:otherwise>
-									<c:forEach items="${Personal}" var="personal" varStatus="loop">
-										<img
-								src="${personal.picture}"
-								alt="Author Image"
-								style="width: 250px; Height: 250px; border-radius: 100%; border: 3px solid #ff9933;"></c:forEach>
-									</c:otherwise>
-
-
-								</c:choose>
-						
-						
-						
-						
-						
-							
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="about-text">
-								<h2>
-									<b>श्री.योगेश उर्फ बाबु पाटे <span class="theme-color">
-											लोकप्रतिनिधी</span> आणि <span class="theme-color">सामाजिक</span>
-										नेता
-									</b>
-								</h2>
-
-
-
-								<c:choose>
-									<c:when test="${empty Personal }">
-										<h4>0 पासून एक विशाल साम्राज्य उभे करणारे व्यक्तिमत्व
-											नारायणगाव ग्रामपंचायत सन मध्ये सदस्य पदासाठी निवडणूक लधवली
-											आणि भरघोस मतांनी निवडून आले.</h4>
-
-									</c:when>
-
-									<c:otherwise>
-									<c:forEach items="${Personal}" var="personal" varStatus="loop">
-										<h4>${personal.header}</h4></c:forEach>
-									</c:otherwise>
-
-
-								</c:choose>
-
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-6">
-
-
-							<c:choose>
-								<c:when test="${empty Personal }">
-									<p>ग्रामपंचायत सदस्य म्हणून काम करत असताना छत्रपति शिवाजी
-										महाराजांच्या जन्माने पावन झालेल्या शिवजन्मभूमित समाजासाठी
-										काहीतरी करावे या उद्देशाने तरुण सहकारी घेऊन सन 2007 साली
-										महाराजांच्या नावाने 'राजे शिवछत्रपति प्रतिष्ठान' या संघटनेची
-										स्थापना केली. या संघटनेमार्फत सामाजिक काम करण्यास सुरुवात
-										झाली. पुढे या संघटनेचे एका मोठ्या वृक्षात रूपांतर झाले
-										गावोगावी राजे शिवछत्रपती प्रतिष्ठानच्या शाखा सुरु झाल्या
-										प्रत्येक गावात राजे शिवछत्रपती प्रतिष्ठानचे पदाधिकारी आणि
-										सभासद समाजोपयोगी कार्य हाती घेऊ लागले. पुणे जिल्ह्यातील सर्वात
-										भव्य दिव्य शिवजयंती या संघटनेच्या माध्यमातून पार पडू लागली.</p>
-
-								</c:when>
-								<c:otherwise>
+							<c:otherwise>
 								<c:forEach items="${Personal}" var="personal" varStatus="loop">
-									<p>${personal.para1}</p></c:forEach>
-								</c:otherwise>
-							</c:choose>
-						</div>
+									<img src="${personal.picture}" alt="Author Image"
+										style="width: 250px; Height: 250px; border-radius: 100%; border: 3px solid #ff9933;">
+								</c:forEach>
+							</c:otherwise>
 
-						<div class="col-lg-6">
+
+						</c:choose>
+
+
+
+
+
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="about-text">
+							<h2>
+								<b>श्री.योगेश उर्फ बाबु पाटे <span class="theme-color">
+										लोकप्रतिनिधी</span> आणि <span class="theme-color">सामाजिक</span> नेता
+								</b>
+							</h2>
+
+
+
 							<c:choose>
 								<c:when test="${empty Personal }">
-									<p>अनेक प्रश्नांवर बाबुभाऊ यांच्या नेतृत्वाखाली
-										प्रतिष्ठानचे सभासद वाचा फोडु लागले त्यामध्ये पाण्याचा
-										प्रश्न,शेतकऱ्यांच्या प्रश्न,रस्त्याचा प्रश्न, कुठे कुणावर
-										अन्याय घडत असेल त्यावर आपला आवाज उठवणारी संघटना म्हणून संपूर्ण
-										जिल्ह्यात आपली ख्याती पसरवली. जनतेचे प्रतिनिधित्व करत असताना
-										बाबुभाऊ यांना जुन्नर तालुका शिवसेना संघटक पद भेटले,पक्ष बांधणी
-										साठी बाबुभाउंचे कार्य उत्तम ठरले, त्यांच्या या कामाची दखल घेत
-										पक्षप्रमुख श्री.उद्धवसाहेब ठाकरे यांनी मातोश्री येथे सन्मानित
-										केले. बाबुभाऊ हे अनुभवी लोकप्रतिनिधि असून राजकीय बुद्धिचातुर्य
-										व कौशल्य यासाठी विविध व्यासपीठांनी गौरवीले आहे.</p>
+									<h4>0 पासून एक विशाल साम्राज्य उभे करणारे व्यक्तिमत्व
+										नारायणगाव ग्रामपंचायत सन मध्ये सदस्य पदासाठी निवडणूक लधवली आणि
+										भरघोस मतांनी निवडून आले.</h4>
 
 								</c:when>
 
-								<c:otherwise><c:forEach items="${Personal}" var="personal" varStatus="loop">
-									<p>${personal.para2}</p></c:forEach>
+								<c:otherwise>
+									<c:forEach items="${Personal}" var="personal" varStatus="loop">
+										<h4>${personal.header}</h4>
+									</c:forEach>
 								</c:otherwise>
+
+
 							</c:choose>
 
 						</div>
 					</div>
-					<br> <a class="btn theme-color" href="#">Download Magazine</a>
-			</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+
+
+						<c:choose>
+							<c:when test="${empty Personal }">
+								<p>ग्रामपंचायत सदस्य म्हणून काम करत असताना छत्रपति शिवाजी
+									महाराजांच्या जन्माने पावन झालेल्या शिवजन्मभूमित समाजासाठी
+									काहीतरी करावे या उद्देशाने तरुण सहकारी घेऊन सन 2007 साली
+									महाराजांच्या नावाने 'राजे शिवछत्रपति प्रतिष्ठान' या संघटनेची
+									स्थापना केली. या संघटनेमार्फत सामाजिक काम करण्यास सुरुवात झाली.
+									पुढे या संघटनेचे एका मोठ्या वृक्षात रूपांतर झाले गावोगावी राजे
+									शिवछत्रपती प्रतिष्ठानच्या शाखा सुरु झाल्या प्रत्येक गावात राजे
+									शिवछत्रपती प्रतिष्ठानचे पदाधिकारी आणि सभासद समाजोपयोगी कार्य
+									हाती घेऊ लागले. पुणे जिल्ह्यातील सर्वात भव्य दिव्य शिवजयंती या
+									संघटनेच्या माध्यमातून पार पडू लागली.</p>
+
+							</c:when>
+							<c:otherwise>
+								<c:forEach items="${Personal}" var="personal" varStatus="loop">
+									<p>${personal.para1}</p>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+					</div>
+
+					<div class="col-lg-6">
+						<c:choose>
+							<c:when test="${empty Personal }">
+								<p>अनेक प्रश्नांवर बाबुभाऊ यांच्या नेतृत्वाखाली प्रतिष्ठानचे
+									सभासद वाचा फोडु लागले त्यामध्ये पाण्याचा प्रश्न,शेतकऱ्यांच्या
+									प्रश्न,रस्त्याचा प्रश्न, कुठे कुणावर अन्याय घडत असेल त्यावर
+									आपला आवाज उठवणारी संघटना म्हणून संपूर्ण जिल्ह्यात आपली ख्याती
+									पसरवली. जनतेचे प्रतिनिधित्व करत असताना बाबुभाऊ यांना जुन्नर
+									तालुका शिवसेना संघटक पद भेटले,पक्ष बांधणी साठी बाबुभाउंचे कार्य
+									उत्तम ठरले, त्यांच्या या कामाची दखल घेत पक्षप्रमुख
+									श्री.उद्धवसाहेब ठाकरे यांनी मातोश्री येथे सन्मानित केले.
+									बाबुभाऊ हे अनुभवी लोकप्रतिनिधि असून राजकीय बुद्धिचातुर्य व
+									कौशल्य यासाठी विविध व्यासपीठांनी गौरवीले आहे.</p>
+
+							</c:when>
+
+							<c:otherwise>
+								<c:forEach items="${Personal}" var="personal" varStatus="loop">
+									<p>${personal.para2}</p>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+
+					</div>
+				</div>
+				<br> <a class="btn theme-color" href="#">Download Magazine</a>
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
 	<!--===== END ABOUT AREA =====-->
 
 
 
+	<!-- PHOTO modal -->
+
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog modal-lg">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-body">
+					<div>
+						<div id="myCarousel" class="carousel slide" data-ride="carousel"
+							style="margin-bottom: 15px;">
+
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+								<div class="item active">
+									<img
+										src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"
+										alt="Los Angeles">
+								</div>
+
+								<div class="item">
+									<img
+										src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
+										alt="Chicago">
+								</div>
+
+								<div class="item">
+									<img
+										src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
+										alt="New York">
+								</div>
+							</div>
+
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#myCarousel"
+								data-slide="prev"> <span
+								class="glyphicon glyphicon-chevron-left"></span> <span
+								class="sr-only">Previous</span>
+							</a> <a class="right carousel-control" href="#myCarousel"
+								data-slide="next"> <span
+								class="glyphicon glyphicon-chevron-right"></span> <span
+								class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<!-- END PHOTO modal -->
+
+
+
 	<!--===== NEWS AREA =====-->
+
+
+
+
+
 	<div id="services" class="services-area section-padding"
 		class="welcome-area" data-stellar-background-ratio="0.4">
 		<div class="container">
@@ -458,9 +517,9 @@
 				<!-- Batamya-->
 			</div>
 			<!--/.row-->
-			
-			
-			
+
+
+
 			<!--======= Running text =======-->
 			<div class="running-section-padding">
 				<div class="fluid-container">
@@ -481,118 +540,6 @@
 
 	</div>
 	<!--====== END NEWS AREA ======-->
-
-
-
-	<!--====== WORK AREA ======-->
-	
-	
-	
-	
-	
-<div>
-		<!-- Trigger the modal with a button -->
-		<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-			data-target="#myModal2">Open Modal</button>
-
-		<!-- Modal -->
-		<div class="modal fade" id="myModal2" role="dialog">
-			<div class="modal-dialog modal-lg">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-body">
-						<div>
-							<div id="myCarousel" class="carousel slide" data-ride="carousel"
-								style="margin-bottom: 15px;">
-
-
-								<!-- Wrapper for slides -->
-								<div class="carousel-inner">
-									<div class="item active">
-										<img
-											src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"
-											alt="Los Angeles">
-									</div>
-
-									<div class="item">
-										<img
-											src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
-											alt="Chicago">
-									</div>
-
-									<div class="item">
-										<img
-											src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
-											alt="New York">
-									</div>
-								</div>
-
-								<!-- Left and right controls -->
-								<a class="left carousel-control" href="#myCarousel"
-									data-slide="prev"> <span
-									class="glyphicon glyphicon-chevron-left"></span> <span
-									class="sr-only">Previous</span>
-								</a> <a class="right carousel-control" href="#myCarousel"
-									data-slide="next"> <span
-									class="glyphicon glyphicon-chevron-right"></span> <span
-									class="sr-only">Next</span>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div id="work" class="work-area section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="section-title" style="margin-bottom: 10px;">
-						<h2>छायांकित विशलेषण</h2>
-					</div>
-				</div>
-			</div>
-			<!--/.row-->
-
-			<div class="row">
-				<ul class="work-list text-center">
-					<!-- <li class="filter theme-color" data-filter="all">सर्व</li> -->
-					<li class="filter theme-color" data-filter=".webdesign">फोटो</li>
-					<li class="filter theme-color" data-filter=".development">विडिओ
-					</li>
-					<li class="filter theme-color" data-filter=".grapich">ऑडिओ</li>
-				</ul>
-			</div>
-			<!--/.row-->
-
-			<div class="work-inner">
-
-
-
-
-				<!-- dynamic photo album -->
-
 
 
 				<%-- <div class="work-inner">
@@ -621,64 +568,86 @@
 				</div>
 			</div> --%>
 
+	<!--====== WORK AREA ======-->
 
 
 
+	<div id="work" class="work-area section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="section-title" style="margin-bottom: 10px;">
+						<h2>छायांकित विशलेषण</h2>
+					</div>
+				</div>
+			</div>
+			<!--/.row-->
 
+			<div class="row">
+				<ul class="work-list text-center">
+					<!-- <li class="filter theme-color" data-filter="all">सर्व</li> -->
+					<li class="filter theme-color" data-filter=".webdesign">फोटो</li>
+					<li class="filter theme-color" data-filter=".development">विडिओ
+					</li>
+					<li class="filter theme-color" data-filter=".grapich">ऑडिओ</li>
+				</ul>
+			</div>
+			<!--/.row-->
 
-
-
-
-
-
+			<div class="work-inner">
 				<div class="row no-gutter">
-					<div class="col-md-4 col-sm-6 mix webdesign">
-						<div class="single-work">
-							<img
-								src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"
-								alt="" style="width: 100%, Hieght:50%";>
-							<div class="item-hover">
-								<div class="work-table">
-									<div class="work-tablecell">
-										<div class="hover-content">
-											<h4>शिवजन्मोत्सव</h4>
-											<p>अनुभवी लोकप्रतिनिधी असून राजकीय बुद्धिचातुर्य व कौशल्य
-												यासाठी त्यांना विविध व्यासपिठांनी गौरविलेले आहे.</p>
-											<a class="work-popup theme-color"
-												href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"><i
-												class="fa fa-search-plus"></i></a> <a
-												class="work-link theme-color" href="#"><i
-												class="fa fa-link"></i></a>
+
+
+					<c:forEach items="${Albums}" var="albm" varStatus="loop">
+						<div class="col-md-4 col-sm-4 mix webdesign" style="height: 300px" >
+							<div class="single-work">
+								<img src="${albm.albumImage}" alt=""
+									style="width: 100%;height: 250px;">
+								<div class="item-hover" >
+									<div class="work-table">
+										<div class="work-tablecell">
+											<div class="hover-content">
+												<h4>${albm.albumName }</h4>
+												<p>${albm.totalImg }photo</p>
+												<a class="work-popup theme-color"
+													href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"><i
+													class="fa fa-search-plus"></i></a> <a
+													class="work-link theme-color" href="#"><i
+													class="fa fa-link"></i></a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 mix webdesign">
-						<div class="single-work">
-							<img
-								src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
-								alt="" style="width: 100%, Hieght:50%";>
-							<div class="item-hover">
-								<div class="work-table">
-									<div class="work-tablecell">
-										<div class="hover-content">
-											<h4>शिवजन्मोत्सव</h4>
-											<p>अनुभवी लोकप्रतिनिधी असून राजकीय बुद्धिचातुर्य व कौशल्य
-												यासाठी त्यांना विविध व्यासपिठांनी गौरविलेले आहे.</p>
-											<a class="work-popup theme-color"
-												href="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"><i
-												class="fa fa-search-plus"></i></a> <a
-												class="work-link theme-color" href="#"><i
-												class="fa fa-link"></i></a>
+
+					</c:forEach>
+
+					<%-- <div class="col-md-4 col-sm-6 mix webdesign">
+							<div class="single-work">
+								<img
+									src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
+									alt="" style="width: 100%, Hieght:50%";>
+								<div class="item-hover">
+									<div class="work-table">
+										<div class="work-tablecell">
+											<div class="hover-content">
+												<h4>शिवजन्मोत्सव</h4>
+												<p>अनुभवी लोकप्रतिनिधी असून राजकीय बुद्धिचातुर्य व
+													कौशल्य यासाठी त्यांना विविध व्यासपिठांनी गौरविलेले आहे.</p>
+												<a class="work-popup theme-color"
+													href="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"><i
+													class="fa fa-search-plus"></i></a> <a
+													class="work-link theme-color" href="#"><i
+													class="fa fa-link"></i></a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 mix development">
+						</div> --%>
+
+					<%-- <div class="col-md-4 col-sm-6 mix development">
 						<div class="single-work">
 							<img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
@@ -700,32 +669,33 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 mix development">
-						<div class="single-work">
-							<img
-								src="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"
-								alt="" style="width: 100%, Hieght:50%";>
-							<div class="item-hover">
-								<div class="work-table">
-									<div class="work-tablecell">
-										<div class="hover-content">
-											<h4>वृक्षारोपण</h4>
-											<p>वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण
-												वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण
-												वृक्षारोपण</p>
-											<a class="work-popup theme-color"
-												href="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"><i
-												class="fa fa-search-plus"></i></a> <a
-												class="work-link theme-color" href="#"><i
-												class="fa fa-link"></i></a>
+					</div> --%>
+					<%-- <div class="col-md-4 col-sm-6 mix development">
+							<div class="single-work">
+								<img
+									src="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"
+									alt="" style="width: 100%, Hieght:50%";>
+								<div class="item-hover">
+									<div class="work-table">
+										<div class="work-tablecell">
+											<div class="hover-content">
+												<h4>वृक्षारोपण</h4>
+												<p>वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण
+													वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण
+													वृक्षारोपण वृक्षारोपण</p>
+												<a class="work-popup theme-color"
+													href="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"><i
+													class="fa fa-search-plus"></i></a> <a
+													class="work-link theme-color" href="#"><i
+													class="fa fa-link"></i></a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 mix grapich">
+						</div> --%>
+
+					<%-- <div class="col-md-4 col-sm-6 mix grapich">
 						<div class="single-work">
 							<img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/work/5.jpg"
@@ -748,30 +718,30 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 mix grapich">
-						<div class="single-work">
-							<img
-								src="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"
-								alt="" style="width: 100%, Hieght:100%";>
-							<div class="item-hover">
-								<div class="work-table">
-									<div class="work-tablecell">
-										<div class="hover-content">
-											<h4>समाजकल्याण</h4>
-											<p>समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण
-												समाजकल्याण समाजकल्याण समाजकल्याण .</p>
-											<a class="work-popup theme-color"
-												href="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"><i
-												class="fa fa-search-plus"></i></a> <a
-												class="work-link theme-color" href="#"><i
-												class="fa fa-link"></i></a>
+					</div> --%>
+					<%-- <div class="col-md-4 col-sm-6 mix grapich">
+							<div class="single-work">
+								<img
+									src="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"
+									alt="" style="width: 100%, Hieght:100%";>
+								<div class="item-hover">
+									<div class="work-table">
+										<div class="work-tablecell">
+											<div class="hover-content">
+												<h4>समाजकल्याण</h4>
+												<p>समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण
+													समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण .</p>
+												<a class="work-popup theme-color"
+													href="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"><i
+													class="fa fa-search-plus"></i></a> <a
+													class="work-link theme-color" href="#"><i
+													class="fa fa-link"></i></a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+						</div> --%>
 				</div>
 				<!--/.row-->
 			</div>
