@@ -542,7 +542,7 @@
 	<!--====== END NEWS AREA ======-->
 
 
-				<%-- <div class="work-inner">
+	<%-- <div class="work-inner">
 				<div class="row no-gutter">
 					<c:forEach items="${Albums}" var="albm" varStatus="loop">
 	              <div class="col-md-4 col-sm-6">
@@ -586,10 +586,9 @@
 			<div class="row">
 				<ul class="work-list text-center">
 					<!-- <li class="filter theme-color" data-filter="all">सर्व</li> -->
-					<li class="filter theme-color" data-filter=".webdesign">फोटो</li>
-					<li class="filter theme-color" data-filter=".development">विडिओ
-					</li>
-					<li class="filter theme-color" data-filter=".grapich">ऑडिओ</li>
+					<li class="filter theme-color" onclick="showMoreAlbum();">फोटो</li>
+					<li class="filter theme-color" onclick="videos();">विडिओ</li>
+					<!-- <li class="filter theme-color" data-filter=".grapich">ऑडिओ</li> -->
 				</ul>
 			</div>
 			<!--/.row-->
@@ -599,30 +598,33 @@
 
 
 					<c:forEach items="${Albums}" var="albm" varStatus="loop">
-						<div class="col-md-4 col-sm-4 mix webdesign" style="height: 300px" >
-							<div class="single-work">
-								<img src="${albm.albumImage}" alt=""
-									style="width: 100%;height: 250px;">
-								<div class="item-hover" >
-									<div class="work-table">
-										<div class="work-tablecell">
-											<div class="hover-content">
-												<h4>${albm.albumName }</h4>
-												<p>${albm.totalImg }photo</p>
-												<a class="work-popup theme-color"
-													href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"><i
-													class="fa fa-search-plus"></i></a> <a
-													class="work-link theme-color" href="#"><i
-													class="fa fa-link"></i></a>
+						<div class="photoalbum" style="display: none;">
+							<div class="col-md-4 col-sm-4 mix webdesign "
+								style="height: 300px;">
+								<div class="single-work">
+									<img src="${albm.albumImage}" alt=""
+										style="width: 100%; height: 250px;">
+									<div class="item-hover">
+										<div class="work-table">
+											<div class="work-tablecell">
+												<div class="hover-content">
+													<h4>${albm.albumName }</h4>
+													<p>${albm.totalImg }photo</p>
+													<a class="work-popup theme-color"
+														href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"><i
+														class="fa fa-search-plus"></i></a> <a
+														class="work-link theme-color" href="#"><i
+														class="fa fa-link"></i></a>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
 					</c:forEach>
-
+					<button id="btnmore" class="btn btn-default col-md-12"
+						onclick="showMoreAlbum();">Show More</button>
 					<%-- <div class="col-md-4 col-sm-6 mix webdesign">
 							<div class="single-work">
 								<img
@@ -647,7 +649,48 @@
 							</div>
 						</div> --%>
 
-					<%-- <div class="col-md-4 col-sm-6 mix development">
+
+
+
+
+					<div class="vid" style="display: none;">
+						<div class="col-md-4 col-sm-4 mix development "
+							style="height: 300px;">
+							<div class="single-work">
+								<img
+									src="
+									<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
+									alt="" style="width: 100%; height: 250px;">
+								<div class="item-hover">
+									<div class="work-table">
+										<div class="work-tablecell">
+											<div class="hover-content">
+												<h4>वृक्षारोपण</h4>
+												<p>वृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपण
+													वृक्षारोपण वृक्षारोपण वृक्षारोपण</p>
+												<a class="work-popup theme-color"
+													href="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"><i
+													class="fa fa-search-plus"></i></a> <a
+													class="work-link theme-color" href="#"><i
+													class="fa fa-link"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+					<%-- <div class="col-md-4 col-sm-6 mix development" style="height: 300px;">
 						<div class="single-work">
 							<img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
@@ -1028,6 +1071,45 @@
 
 
 </body>
+<script type="text/javascript">
+	var albums = document.getElementsByClassName("photoalbum");
+	var video = document.getElementsByClassName("vid");
+	var max = 3;
+	var demo = showMoreAlbum();
+	function showMoreAlbum() {
 
-<!-- Mirrored from programmerhasan.com/demos/light/light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Aug 2017 06:39:46 GMT -->
+		document.getElementById("btnmore").style.display = "";
+		for (i = 0; i < max; i++) {
+
+			
+			if (albums.length > i) {
+				albums[i].style.display = "";
+			} else {
+				document.getElementById("btnmore").style.display = "none";
+				return false;
+			}
+
+		}
+		for (i = 0; i < video.length; i++) {
+			video[0].style.display = "none";
+
+		}
+		if (albums.length > max)
+			max = max + 3;
+	}
+
+	function videos() {
+		max = 3;
+		for (i = 0; i < albums.length; i++) {
+			document.getElementById("btnmore").style.display = "none";
+			albums[i].style.display = "none";
+
+		}
+		for (i = 0; i < video.length; i++) {
+			video[0].style.display = "";
+
+		}
+	}
+
+</script>
 </html>
