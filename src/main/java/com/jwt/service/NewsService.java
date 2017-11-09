@@ -19,4 +19,5 @@ public interface NewsService {
 
 	boolean deleteNotice(int parseInt);
 
+	
 }

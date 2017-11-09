@@ -133,6 +133,10 @@ public class MainController {
 	        model.addObject("News", news);
 	        
 	        
+	        List<Notice> notices = newsService.getAllNotice();
+	        model.addObject("Notices", notices);
+	        
+	        
 		return model;
 		
 		
@@ -142,7 +146,7 @@ public class MainController {
 	public ModelAndView loginupdate(HttpServletRequest request){
 		ModelAndView model = null;
 		 
-	        model = new ModelAndView("home");
+	        model = new ModelAndView("homeadmin");
 	        
 	        request.setAttribute("ROLE", "admin");
 	        List<PhotoAlbum> albums = albumService.getAllAlbums();

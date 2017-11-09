@@ -33,15 +33,12 @@
 			$.ajax({
 				url : "<c:url value='/message'/>",
 				data : $("#contact-form").serialize(),
-
 				type : "GET",
-
 				success : function(response) {
 					$('#newname').val('');
 					$('#email').val('');
 					$('#message').val('');
 					alert("Thank You for Messeging")
-
 				},
 				error : function(xhr, status, error) {
 					alert(xhr.responseText);
@@ -65,7 +62,6 @@
 			stop : '#stop',
 			start : '#start',
 			mousestop : true,
-
 		});
 	});
 </script>
@@ -103,8 +99,7 @@
 									class="icon-bar"></span>
 							</button>
 						</div>
-						</button>
-						<a class="theme-color" href="index.html">श्री.योगेश उर्फ
+						<a class="theme-color" >श्री.योगेश उर्फ
 							&nbsp; <span>बाबु पाटे</span>
 						</a>
 						<!--== logo ==-->
@@ -384,7 +379,7 @@
 
 					<div class="mix webdesign">
 						<div class="single-work">
-							<a href="#"> <img
+							<a > <img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/Shivaji.png"
 								alt="" style="width: 100%, Hieght:50%";>
 							</a>
@@ -402,7 +397,7 @@
 
 					<div class="mix webdesign">
 						<div class="single-work">
-							<a href="#"> <img
+							<a > <img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/Balasaheb.png"
 								alt="" style="width: 100%, Hieght:50%";>
 							</a>
@@ -563,7 +558,6 @@
 									केले आहे.</p> -->
 							</div>
 						</div>
-
 					</c:forEach>
 				</div>
 			</div> --%>
@@ -1077,10 +1071,8 @@
 	var max = 3;
 	var demo = showMoreAlbum();
 	function showMoreAlbum() {
-
 		document.getElementById("btnmore").style.display = "";
 		for (i = 0; i < max; i++) {
-
 			
 			if (albums.length > i) {
 				albums[i].style.display = "";
@@ -1088,28 +1080,22 @@
 				document.getElementById("btnmore").style.display = "none";
 				return false;
 			}
-
 		}
 		for (i = 0; i < video.length; i++) {
 			video[0].style.display = "none";
-
 		}
 		if (albums.length > max)
 			max = max + 3;
 	}
-
 	function videos() {
 		max = 3;
 		for (i = 0; i < albums.length; i++) {
 			document.getElementById("btnmore").style.display = "none";
 			albums[i].style.display = "none";
-
 		}
 		for (i = 0; i < video.length; i++) {
 			video[0].style.display = "";
-
 		}
 	}
-
 </script>
 </html>

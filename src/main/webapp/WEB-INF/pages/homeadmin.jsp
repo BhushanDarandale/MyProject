@@ -92,40 +92,6 @@
 
 
 
-<script type="text/javascript">
-
-
-$(document).ready(function() {
-    $('#sampleForm').submit(
-        function(event) {
-           /*  var firstname = $('#firstname').val();
-            var lastname = $('#lastname').val();                
-            var data = 'firstname='
-                    + encodeURIComponent(firstname)
-                    + '&lastname='
-                    + encodeURIComponent(lastname); */
-            $.ajax({
-                url : "<c:url value='/profile'/>",
-                data : $("#sampleForm").serialize(),
-                
-                type : "GET",
-
-                success : function(response) {
-                	$('#firstname').val('');
-                	$('#lastname').val('');
-                	alert("Thank You for Messeging")
-                    
-                },
-                error : function(xhr, status, error) {
-                    alert(xhr.responseText);
-                }
-            });
-            return false;
-        });
-    });
-
-
-</script>
 
 
 </head>
@@ -143,123 +109,6 @@ $(document).ready(function() {
 		</div>
 	</div>
 
-
-
-
-
-
-
-
-	<div>
-		<!-- Trigger the modal with a button -->
-		<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-			data-target="#myModal2">Open Modal</button>
-
-		<!-- Modal -->
-		<div class="modal fade" id="myModal2" role="dialog">
-			<div class="modal-dialog modal-lg">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-body">
-						<div>
-							<div id="myCarousel" class="carousel slide" data-ride="carousel"
-								style="margin-bottom: 15px;">
-
-
-								<!-- Wrapper for slides -->
-								<div class="carousel-inner">
-									<div class="item active">
-										<img
-											src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"
-											alt="Los Angeles">
-									</div>
-
-									<div class="item">
-										<img
-											src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
-											alt="Chicago">
-									</div>
-
-									<div class="item">
-										<img
-											src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
-											alt="New York">
-									</div>
-								</div>
-
-								<!-- Left and right controls -->
-								<a class="left carousel-control" href="#myCarousel"
-									data-slide="prev"> <span
-									class="glyphicon glyphicon-chevron-left"></span> <span
-									class="sr-only">Previous</span>
-								</a> <a class="right carousel-control" href="#myCarousel"
-									data-slide="next"> <span
-									class="glyphicon glyphicon-chevron-right"></span> <span
-									class="sr-only">Next</span>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- <form id="sampleForm" method="GET" action="/bsd/profile">
-      
- 
-<div>
-         <input type="text" name="newname" id="newname">
-     </div>
- 
- 
-      
- 
-<div>
-         <input type="email" name="email" id="email">
-     </div>
- 
- <div>
-         <textarea type="text" name="messege" id="email">
-     </div>
- 
-      
- 
-<div>
-         <button type="submit" name="submit">Submit</button>
-     </div>
- 
- 
-</form> -->
 
 
 
@@ -305,12 +154,6 @@ $(document).ready(function() {
 										<td><button type="button" class="btn " style="padding: 0"
 												data-toggle="modal" data-target="#myModal${loop.count  }">Add
 											</button></td>
-
-
-										<%-- 	<td>	<img style="height: 40px; width: 40px" data-toggle="modal" data-target="#myModal${loop.count  }"
-								src="<%=request.getContextPath()%>/resources/light/assets/img/service/plus.png"
-								alt=""></td> --%>
-
 									</tr>
 								</c:forEach>
 							</tbody>
