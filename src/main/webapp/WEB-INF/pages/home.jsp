@@ -99,8 +99,8 @@
 									class="icon-bar"></span>
 							</button>
 						</div>
-						<a class="theme-color" >श्री.योगेश उर्फ
-							&nbsp; <span>बाबु पाटे</span>
+						<a class="theme-color">श्री.योगेश उर्फ &nbsp; <span>बाबु
+								पाटे</span>
 						</a>
 						<!--== logo ==-->
 					</div>
@@ -379,7 +379,7 @@
 
 					<div class="mix webdesign">
 						<div class="single-work">
-							<a > <img
+							<a> <img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/Shivaji.png"
 								alt="" style="width: 100%, Hieght:50%";>
 							</a>
@@ -397,7 +397,7 @@
 
 					<div class="mix webdesign">
 						<div class="single-work">
-							<a > <img
+							<a> <img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/Balasaheb.png"
 								alt="" style="width: 100%, Hieght:50%";>
 							</a>
@@ -520,10 +520,7 @@
 				<div class="fluid-container">
 					<div class="row">
 						<marquee>
-							<h3 style="color: #f7f7f7;">
-								श्री.योगेश उर्फ बाबु पाटे <span class="theme-color">
-									लोकप्रतिनिधी</span> आणि <span class="theme-color">सामाजिक</span> नेता
-							</h3>
+							<h5 style="color: #f7f7f7;">श्री.योगेश उर्फ बाबु पाटे </h5>
 						</marquee>
 					</div>
 				</div>
@@ -580,15 +577,15 @@
 			<div class="row">
 				<ul class="work-list text-center">
 					<!-- <li class="filter theme-color" data-filter="all">सर्व</li> -->
-					<li class="filter theme-color" onclick="showMoreAlbum();">फोटो</li>
-					<li class="filter theme-color" onclick="videos();">विडिओ</li>
+					<li class="filter  " onclick="showMoreAlbum();">फोटो</li>
+					<li class="filter  " onclick="videos();">विडिओ</li>
 					<!-- <li class="filter theme-color" data-filter=".grapich">ऑडिओ</li> -->
 				</ul>
 			</div>
 			<!--/.row-->
 
 			<div class="work-inner">
-				<div class="row no-gutter">
+				<div class=" no-gutter">
 
 
 					<c:forEach items="${Albums}" var="albm" varStatus="loop">
@@ -597,18 +594,16 @@
 								style="height: 300px;">
 								<div class="single-work">
 									<img src="${albm.albumImage}" alt=""
-										style="width: 100%; height: 250px;">
-									<div class="item-hover">
+										style="width: 100%; height: 250px;" data-toggle="modal" data-target="#myModal2" >
+									<div class="item-hover" data-toggle="modal" data-target="#myModal2">
 										<div class="work-table">
 											<div class="work-tablecell">
-												<div class="hover-content">
+												<div class="hover-content" >
 													<h4>${albm.albumName }</h4>
 													<p>${albm.totalImg }photo</p>
-													<a class="work-popup theme-color"
-														href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"><i
-														class="fa fa-search-plus"></i></a> <a
-														class="work-link theme-color" href="#"><i
-														class="fa fa-link"></i></a>
+													<%-- <a class=" "
+														href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg">
+														</a> --%>
 												</div>
 											</div>
 										</div>
@@ -617,9 +612,18 @@
 							</div>
 						</div>
 					</c:forEach>
-					<button id="btnmore" class="btn btn-default col-md-12"
-						onclick="showMoreAlbum();">Show More</button>
-					<%-- <div class="col-md-4 col-sm-6 mix webdesign">
+					<center>
+						<div class="col-md-12">
+							<button id="btnmore" class="btn btn-default "
+								onclick="showMoreAlbum();">Show More</button>
+						</div>
+					</center>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+
+
+			<%-- <div class="col-md-4 col-sm-6 mix webdesign">
 							<div class="single-work">
 								<img
 									src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
@@ -631,11 +635,8 @@
 												<h4>शिवजन्मोत्सव</h4>
 												<p>अनुभवी लोकप्रतिनिधी असून राजकीय बुद्धिचातुर्य व
 													कौशल्य यासाठी त्यांना विविध व्यासपिठांनी गौरविलेले आहे.</p>
-												<a class="work-popup theme-color"
-													href="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"><i
-													class="fa fa-search-plus"></i></a> <a
-													class="work-link theme-color" href="#"><i
-													class="fa fa-link"></i></a>
+												<a class=" theme-color"
+													href="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"></a> 
 											</div>
 										</div>
 									</div>
@@ -647,33 +648,29 @@
 
 
 
-					<div class="vid" style="display: none;">
-						<div class="col-md-4 col-sm-4 mix development "
-							style="height: 300px;">
-							<div class="single-work">
-								<img
-									src="
+			<div class="vid" style="display: none;">
+				<div class="col-md-4 col-sm-4 mix development "
+					style="height: 300px;">
+					<div class="single-work">
+						<img
+							src="
 									<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
-									alt="" style="width: 100%; height: 250px;">
-								<div class="item-hover">
-									<div class="work-table">
-										<div class="work-tablecell">
-											<div class="hover-content">
-												<h4>वृक्षारोपण</h4>
-												<p>वृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपण
-													वृक्षारोपण वृक्षारोपण वृक्षारोपण</p>
-												<a class="work-popup theme-color"
-													href="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"><i
-													class="fa fa-search-plus"></i></a> <a
-													class="work-link theme-color" href="#"><i
-													class="fa fa-link"></i></a>
-											</div>
-										</div>
+							alt="" style="width: 100%; height: 250px;">
+						<div class="item-hover">
+							<div class="work-table">
+								<div class="work-tablecell">
+									<div class="hover-content">
+										<h4>वृक्षारोपण</h4>
+										<p>वृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपण
+											वृक्षारोपण वृक्षारोपण वृक्षारोपण</p>
+
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
 
 
 
@@ -684,7 +681,7 @@
 
 
 
-					<%-- <div class="col-md-4 col-sm-6 mix development" style="height: 300px;">
+			<%-- <div class="col-md-4 col-sm-6 mix development" style="height: 300px;">
 						<div class="single-work">
 							<img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
@@ -696,18 +693,15 @@
 											<h4>वृक्षारोपण</h4>
 											<p>वृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपण
 												वृक्षारोपण वृक्षारोपण वृक्षारोपण</p>
-											<a class="work-popup theme-color"
-												href="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"><i
-												class="fa fa-search-plus"></i></a> <a
-												class="work-link theme-color" href="#"><i
-												class="fa fa-link"></i></a>
+											<a class=" theme-color"
+												href="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"></a> 
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div> --%>
-					<%-- <div class="col-md-4 col-sm-6 mix development">
+			<%-- <div class="col-md-4 col-sm-6 mix development">
 							<div class="single-work">
 								<img
 									src="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"
@@ -720,11 +714,8 @@
 												<p>वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण
 													वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण वृक्षारोपण
 													वृक्षारोपण वृक्षारोपण</p>
-												<a class="work-popup theme-color"
-													href="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"><i
-													class="fa fa-search-plus"></i></a> <a
-													class="work-link theme-color" href="#"><i
-													class="fa fa-link"></i></a>
+												<a class=" theme-color"
+													href="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"></a>
 											</div>
 										</div>
 									</div>
@@ -732,7 +723,7 @@
 							</div>
 						</div> --%>
 
-					<%-- <div class="col-md-4 col-sm-6 mix grapich">
+			<%-- <div class="col-md-4 col-sm-6 mix grapich">
 						<div class="single-work">
 							<img
 								src="<%=request.getContextPath()%>/resources/light/assets/img/work/5.jpg"
@@ -745,18 +736,15 @@
 											<p>समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण
 												समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण
 												समाजकल्याण .</p>
-											<a class="work-popup theme-color"
-												href="<%=request.getContextPath()%>/resources/light/assets/img/work/5.jpg"><i
-												class="fa fa-search-plus"></i></a> <a
-												class="work-link theme-color" href="#"><i
-												class="fa fa-link"></i></a>
+											<a class="theme-color"
+												href="<%=request.getContextPath()%>/resources/light/assets/img/work/5.jpg"></a> 
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div> --%>
-					<%-- <div class="col-md-4 col-sm-6 mix grapich">
+			<%-- <div class="col-md-4 col-sm-6 mix grapich">
 							<div class="single-work">
 								<img
 									src="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"
@@ -768,22 +756,19 @@
 												<h4>समाजकल्याण</h4>
 												<p>समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण
 													समाजकल्याण समाजकल्याण समाजकल्याण समाजकल्याण .</p>
-												<a class="work-popup theme-color"
-													href="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"><i
-													class="fa fa-search-plus"></i></a> <a
-													class="work-link theme-color" href="#"><i
-													class="fa fa-link"></i></a>
+												<a class=" theme-color"
+													href="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"></a> 
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div> --%>
-				</div>
-				<!--/.row-->
-			</div>
 		</div>
-		<!--/.container-->
+		<!--/.row-->
+	</div>
+	</div>
+	<!--/.container-->
 	</div>
 	<!--====== END WORK AREA ======-->
 
@@ -982,7 +967,7 @@
 						<div class="single-address theme-color">
 
 							<div class="single-address theme-color">
-								<div class="fb-page"
+								<div class="fb-page col-sm-12 col-xs-12"
 									data-href="https://www.facebook.com/babubhaupate/"
 									data-tabs="timeline" data-width="500" data-height="255"
 									data-small-header="true" data-adapt-container-width="true"
@@ -995,7 +980,7 @@
 								</div>
 							</div>
 
-							<div class="single-address theme-color">
+							<div class="single-address theme-color ">
 								<div class="fb-follow"
 									data-href="https://www.facebook.com/Babu-Pate-%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%AF%E0%A5%8B%E0%A4%97%E0%A5%87%E0%A4%B6-%E0%A4%89%E0%A4%B0%E0%A5%8D%E0%A4%AB-%E0%A4%AC%E0%A4%BE%E0%A4%AC%E0%A5%81-%E0%A4%AA%E0%A4%BE%E0%A4%9F%E0%A5%87-627037160708490/"
 									data-width="500" data-height="1000" data-layout="standard"
@@ -1073,7 +1058,7 @@
 	function showMoreAlbum() {
 		document.getElementById("btnmore").style.display = "";
 		for (i = 0; i < max; i++) {
-			
+
 			if (albums.length > i) {
 				albums[i].style.display = "";
 			} else {
