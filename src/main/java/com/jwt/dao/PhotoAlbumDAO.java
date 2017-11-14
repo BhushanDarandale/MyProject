@@ -16,4 +16,6 @@ public interface PhotoAlbumDAO {
 	public Object addPhoto(Photo photo);
 
 	public void updateAlbum(PhotoAlbum photo);
+
+	public List<Photo> getAllAlbumsPhoto();
 }

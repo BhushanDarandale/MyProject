@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.jwt.model.News;
 import com.jwt.model.Notice;
 import com.jwt.model.Personal;
+import com.jwt.model.Photo;
 import com.jwt.model.PhotoAlbum;
 import com.jwt.model.Video;
 import com.jwt.service.MainService;
@@ -57,7 +58,8 @@ public class HomeController {
 	        List<PhotoAlbum> albums = albumService.getAllAlbums();
 	        model.addObject("Albums", albums);
 		
-		
+	        List<Photo> photo = albumService.getAllAlbumsPhoto();
+	        model.addObject("AlbumsPhoto", photo);
 		
 		
 		return model;

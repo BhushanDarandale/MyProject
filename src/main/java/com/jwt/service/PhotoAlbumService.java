@@ -16,5 +16,7 @@ public interface PhotoAlbumService {
 	public void addPhoto(Photo music);
 
 	public void updateAlbum(PhotoAlbum album);
+
+	public List<Photo> getAllAlbumsPhoto();
 	
 }

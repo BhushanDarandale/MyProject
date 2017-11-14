@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.jwt.dao.PhotoAlbumDAO;
+import com.jwt.model.News;
 import com.jwt.model.Photo;
 import com.jwt.model.PhotoAlbum;
 
@@ -68,6 +69,14 @@ public class PhotoAlbumDAOImpl implements PhotoAlbumDAO {
 			session.clear();
 		}
 		
+	}
+
+	@Override
+	public List<Photo> getAllAlbumsPhoto() {
+		Session session = this.sessionFactory.getCurrentSession();
+		Criteria criteria = session.createCriteria(Photo.class);
+		List<Photo> photos = criteria.list();
+		return photos;
 	}
 
 }

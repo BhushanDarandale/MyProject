@@ -255,27 +255,47 @@
 
 
 	<!-- PHOTO modal -->
+	<c:forEach items="${Albums}" var="albm" varStatus="loop">
+		<div class="modal fade" id="myModal2${loop.count}" role="dialog">
+			<div class="modal-dialog modal-lg">
 
-	<div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog modal-lg">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-body">
-					<div>
-						<div id="myCarousel" class="carousel slide" data-ride="carousel"
-							style="margin-bottom: 15px;">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body" style="padding: 0px;">
+						<div>
+							<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
-							<!-- Wrapper for slides -->
-							<div class="carousel-inner">
-								<div class="item active">
-									<img
-										src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"
-										alt="Los Angeles">
-								</div>
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner ">
 
-								<div class="item">
+									<c:forEach items="${AlbumsPhoto}" var="albmphoto"
+										varStatus="loop">
+
+										<c:if test="${loop.count eq 1}">
+											<div class="item active " align="center"
+												style="background-color: #000000">
+												<c:if test="${albmphoto.photoAlbum.id eq albm.id}">
+
+													<img src="${albmphoto.path}" style="height: 80%;">
+													<a href="${albmphoto.path}" download>Download</a>
+												</c:if>
+											</div>
+										</c:if>
+
+										<c:if test="${loop.count gt 1}">
+											<div class="item" align="center"
+												style="background-color: #000000">
+												<c:if test="${albmphoto.photoAlbum.id eq albm.id}">
+
+													<img src="${albmphoto.path}" style="height: 80%;">
+													<a href="${albmphoto.path}" download>Download</a>
+												</c:if>
+											</div>
+										</c:if>
+
+									</c:forEach>
+									<%-- <div class="item">
 									<img
 										src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
 										alt="Chicago">
@@ -285,30 +305,27 @@
 									<img
 										src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
 										alt="New York">
+								</div> --%>
 								</div>
-							</div>
 
-							<!-- Left and right controls -->
-							<a class="left carousel-control" href="#myCarousel"
-								data-slide="prev"> <span
-								class="glyphicon glyphicon-chevron-left"></span> <span
-								class="sr-only">Previous</span>
-							</a> <a class="right carousel-control" href="#myCarousel"
-								data-slide="next"> <span
-								class="glyphicon glyphicon-chevron-right"></span> <span
-								class="sr-only">Next</span>
-							</a>
+								<!-- Left and right controls -->
+								<a class="left carousel-control" href="#myCarousel"
+									data-slide="prev"> <span
+									class="glyphicon glyphicon-chevron-left"></span> <span
+									class="sr-only">Previous</span>
+								</a> <a class="right carousel-control" href="#myCarousel"
+									data-slide="next"> <span
+									class="glyphicon glyphicon-chevron-right"></span> <span
+									class="sr-only">Next</span>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
+
 			</div>
-
 		</div>
-	</div>
-
+	</c:forEach>
 
 
 	<!-- END PHOTO modal -->
@@ -473,9 +490,25 @@
 			<div class="running-section-padding">
 				<div class="fluid-container">
 					<div class="row">
-						<marquee>
-							<h5 style="color: #f7f7f7;">श्री.योगेश उर्फ बाबु पाटे</h5>
-						</marquee>
+
+
+
+						<c:choose>
+							<c:when test="${empty Notices }">
+								<marquee>
+									<h5 style="color: #f7f7f7;">श्री.योगेश उर्फ बाबु पाटे</h5>
+								</marquee>
+							</c:when>
+							<c:otherwise>
+								<c:forEach items="${Notices}" var="notices" varStatus="loop">
+									<marquee>
+										<h5 style="color: #f7f7f7;">${notices.noticetext }</h5>
+									</marquee>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+
+
 					</div>
 				</div>
 			</div>
@@ -504,8 +537,8 @@
 
 			<div class="row">
 				<ul class="work-list text-center">
-					<li class="filter theme-color" onclick="showMoreAlbum();">फोटो</li>
-					<li class="filter theme-color" onclick="videos();">विडिओ</li>
+					<li class="filter " onclick="showMoreAlbum();">फोटो</li>
+					<li class="filter " onclick="videos();">विडिओ</li>
 				</ul>
 			</div>
 
@@ -518,10 +551,10 @@
 							<div class="col-md-4 col-sm-4 mix " style="height: 300px;">
 								<div class="single-work">
 									<img src="${albm.albumImage}" alt=""
-										style="width: 100%; height: 250px;">
-									<!--  data-toggle="modal"
-										data-target="#myModal2" -->
-									<div class="item-hover">
+										style="width: 100%; height: 250px;" data-toggle="modal"
+										data-target="#myModal2">
+									<div class="item-hover" data-toggle="modal"
+										data-target="#myModal2${loop.count}">
 										<div class="work-table">
 											<div class="work-tablecell">
 												<div class="hover-content">
@@ -538,16 +571,16 @@
 							</div>
 						</div>
 					</c:forEach>
-					
-					
-						<div class="col-md-12">
-							<button id="btnmore" class="btn btn-default "
+
+					<center>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<button id="btnmore" class="btn btn-default col-md-12 "
 								onclick="showMoreAlbum();">Show More</button>
 						</div>
-				
-			
-			
-			
+					</center>
+
+
+
 					<div class="vid" style="display: none;">
 						<div class="col-md-4 col-sm-4 mix development "
 							style="height: 300px;">

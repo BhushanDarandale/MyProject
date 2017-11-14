@@ -47,5 +47,11 @@ public class PhotoAlbumServiceImpl implements PhotoAlbumService {
 		albumDAO.updateAlbum(photo);
 	}
 
+	@Override
+	public List<Photo> getAllAlbumsPhoto() {
+		// TODO Auto-generated method stub
+		return albumDAO.getAllAlbumsPhoto();
+	}
+
 	
 }
