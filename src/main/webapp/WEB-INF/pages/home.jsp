@@ -322,16 +322,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 	<%-- <c:forEach items="${Albums}" var="albm" varStatus="loop">
 		<div class="modal fade" id="myModal2${loop.count}" role="dialog">
 			<div class="modal-dialog modal-lg">
@@ -525,7 +515,14 @@
 							</center>
 						</h2>
 						<ul id="vertical-ticker" style="overflow: hidden;">
-							<li style="margin-top: 10px;"><a style="color: #5858FA"
+						<c:forEach items="${News}" var="news" varStatus="loop">
+						
+						<li style="margin-top: 10px;"><a style="color: #5858FA"
+								data-toggle="modal" data-target="#myModalNews${loop.count}" > ${news.title} </a></li>
+						
+						</c:forEach>
+						
+							<!-- <li style="margin-top: 10px;"><a style="color: #5858FA"
 								href="Shownews.aspx?filename=saheb11111"> आमदाराचे नुसते
 									नावच मोठे .......कृती मात्र शून्य - मा.साहेब </a></li>
 							<li style="margin-top: 10px;"><a style="color: #5858FA"
@@ -552,7 +549,7 @@
 							<li style="margin-top: 10px;"><a style="color: #5858FA"
 								href="Shownews.aspx?filename=saheb11111"> आजपासून आचारसंहिता
 									लागू,महाराष्ट्रात एकाच टप्प्यात मतदानमहाराष्ट्रात १५ ऑक्टोबरला
-									मतदान १९ ऑक्टोबरला मतमोजणी. </a></li>
+									मतदान १९ ऑक्टोबरला मतमोजणी. </a></li> -->
 						</ul>
 
 					</div>
