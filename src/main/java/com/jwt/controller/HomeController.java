@@ -1,6 +1,7 @@
 package com.jwt.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.jwt.model.AlbumPojo;
 import com.jwt.model.News;
 import com.jwt.model.Notice;
 import com.jwt.model.Personal;
@@ -60,8 +62,27 @@ public class HomeController {
 		
 	        List<Photo> photo = albumService.getAllAlbumsPhoto();
 	        model.addObject("AlbumsPhoto", photo);
-		
-		
+	        
+	       
+	     
+	        
+	        List<AlbumPojo> albumPojos=new ArrayList<>();
+	        for(PhotoAlbum al: albums)
+	        {
+	        	   List<Photo> photos=new ArrayList<>();
+	        	 AlbumPojo albumPojo=new AlbumPojo();
+	        	for(Photo pho:photo){
+	        		if(al.getId()==pho.getPhotoAlbum().getId()){
+	        			photos.add(pho);
+	        		}
+	        	}
+	        	
+	        	albumPojo.setAlbm(al);
+        		albumPojo.setPhotos(photos);
+        		albumPojos.add(albumPojo);
+	        }
+	        model.addObject("albumPojos", albumPojos);
+	       System.out.println(albumPojos); 
 		return model;
 	}
 	

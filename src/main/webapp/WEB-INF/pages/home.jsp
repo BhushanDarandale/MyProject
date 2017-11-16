@@ -255,7 +255,84 @@
 
 
 	<!-- PHOTO modal -->
-	<c:forEach items="${Albums}" var="albm" varStatus="loop">
+
+
+	<c:forEach items="${albumPojos}" var="albumPojos" varStatus="loop">
+
+		<div class="modal fade" id="myModal2${loop.count}" role="dialog">
+			<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body" style="padding: 0px;">
+						<div>
+							<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner ">
+
+									<c:forEach items="${albumPojos.photos}" var="albmphoto"
+										varStatus="loop">
+
+										<c:if test="${loop.count eq 1}">
+											<div class="item active " align="center"
+												style="background-color: #000000">
+
+												<img src="${albmphoto.path}" style="height: 80%;"> <a
+													href="${albmphoto.path}" download>Download</a>
+											</div>
+										</c:if>
+
+										<c:if test="${loop.count gt 1}">
+											<div class="item" align="center"
+												style="background-color: #000000">
+
+												<img src="${albmphoto.path}" style="height: 80%;"> <a
+													href="${albmphoto.path}" download>Download</a>
+											</div>
+										</c:if>
+
+									</c:forEach>
+								</div>
+
+								<!-- Left and right controls -->
+								<a class="left carousel-control" href="#myCarousel"
+									data-slide="prev"> <span
+									class="glyphicon glyphicon-chevron-left"></span> <span
+									class="sr-only">Previous</span>
+								</a> <a class="right carousel-control" href="#myCarousel"
+									data-slide="next"> <span
+									class="glyphicon glyphicon-chevron-right"></span> <span
+									class="sr-only">Next</span>
+								</a>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</c:forEach>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<%-- <c:forEach items="${Albums}" var="albm" varStatus="loop">
 		<div class="modal fade" id="myModal2${loop.count}" role="dialog">
 			<div class="modal-dialog modal-lg">
 
@@ -295,7 +372,7 @@
 										</c:if>
 
 									</c:forEach>
-									<%-- <div class="item">
+									<div class="item">
 									<img
 										src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
 										alt="Chicago">
@@ -305,7 +382,7 @@
 									<img
 										src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
 										alt="New York">
-								</div> --%>
+								</div>
 								</div>
 
 								<!-- Left and right controls -->
@@ -325,7 +402,7 @@
 
 			</div>
 		</div>
-	</c:forEach>
+	</c:forEach> --%>
 
 
 	<!-- END PHOTO modal -->
@@ -546,7 +623,7 @@
 				<div class=" no-gutter">
 
 
-					<c:forEach items="${Albums}" var="albm" varStatus="loop">
+					<%-- <c:forEach items="${Albums}" var="albm" varStatus="loop">
 						<div class="photoalbum" style="display: none;">
 							<div class="col-md-4 col-sm-4 mix " style="height: 300px;">
 								<div class="single-work">
@@ -560,6 +637,35 @@
 												<div class="hover-content">
 													<h4>${albm.albumName }</h4>
 													<p>${albm.totalImg }photo</p>
+													<a class=" "
+														href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg">
+														</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:forEach> --%>
+
+
+
+
+					<c:forEach items="${albumPojos}" var="albumPojos" varStatus="loop">
+						<div class="photoalbum">
+							<div class="col-md-4 col-sm-4 mix " style="height: 300px;">
+								<div class="single-work">
+									<img src="${albumPojos.albm.albumImage}" alt=""
+										style="width: 100%; height: 250px;" data-toggle="modal"
+										data-target="#myModal2">
+									<div class="item-hover" data-toggle="modal"
+										data-target="#myModal2${loop.count}">
+										<div class="work-table">
+											<div class="work-tablecell">
+												<div class="hover-content">
+													<h4>${albumPojos.albm.albumName }</h4>
+													<p>${albumPojos.albm.totalImg }photo</p>
 													<%-- <a class=" "
 														href="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg">
 														</a> --%>
@@ -572,6 +678,10 @@
 						</div>
 					</c:forEach>
 
+
+
+
+
 					<center>
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<button id="btnmore" class="btn btn-default col-md-12 "
@@ -580,31 +690,22 @@
 					</center>
 
 
+					<c:forEach items="${Videos}" var="vdo" varStatus="loop">
+						<div class="vid" style="display: none;">
+							<div class="col-md-4 col-sm-4 mix " style="height: 300px;">
+								<div class="single-work">
+								
 
-					<div class="vid" style="display: none;">
-						<div class="col-md-4 col-sm-4 mix development "
-							style="height: 300px;">
-							<div class="single-work">
-								<img
-									src="
-									<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
-									alt="" style="width: 100%; height: 250px;">
-								<div class="item-hover">
-									<div class="work-table">
-										<div class="work-tablecell">
-											<div class="hover-content">
-												<h4>वृक्षारोपण</h4>
-												<p>वृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपणवृक्षारोपण
-													वृक्षारोपण वृक्षारोपण वृक्षारोपण</p>
 
-											</div>
-										</div>
+									<div class="col-sm-3">
+										<iframe width="100%" src="${vdo.path}"
+											allowfullscreen></iframe>
 									</div>
+
 								</div>
 							</div>
 						</div>
-					</div>
-
+					</c:forEach>
 				</div>
 			</div>
 		</div>
@@ -698,10 +799,7 @@
 								</div>
 							</div>
 							<div class="single-address theme-color ">
-								<div class="fb-follow"
-									data-href="https://www.facebook.com/Babu-Pate-%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%AF%E0%A5%8B%E0%A4%97%E0%A5%87%E0%A4%B6-%E0%A4%89%E0%A4%B0%E0%A5%8D%E0%A4%AB-%E0%A4%AC%E0%A4%BE%E0%A4%AC%E0%A5%81-%E0%A4%AA%E0%A4%BE%E0%A4%9F%E0%A5%87-627037160708490/"
-									data-width="500" data-height="1000" data-layout="standard"
-									data-size="small" data-show-faces="false"></div>
+								<div class="fb-follow"></div>
 							</div>
 						</div>
 					</div>
@@ -758,7 +856,9 @@
 			albums[i].style.display = "none";
 		}
 		for (i = 0; i < video.length; i++) {
-			video[0].style.display = "";
+			video[i].style.display = "";
+
+			video[i].style.height = "200px";
 		}
 	}
 </script>
