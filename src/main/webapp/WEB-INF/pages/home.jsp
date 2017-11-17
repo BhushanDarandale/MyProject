@@ -396,6 +396,42 @@
 
 
 	<!-- END PHOTO modal -->
+	
+	<!-- NEWS MODAL -->
+
+	<c:forEach items="${News}" var="news" varStatus="loop">
+		<!-- Modal -->
+		<div class="modal fade" id="myModalNews${loop.count}" role="dialog">
+ 
+
+
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close" data-dismiss="modal">&times;</span>
+						<h4 class="modal-title">${news.title}</h4>
+					</div>
+					<div class="modal-body">
+
+
+						<img src="${news.image}" width="300" height="200">
+						<p>${news.description}</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</c:forEach>
+
+
+
+
+
+
+
 
 
 
@@ -515,13 +551,14 @@
 							</center>
 						</h2>
 						<ul id="vertical-ticker" style="overflow: hidden;">
-						<c:forEach items="${News}" var="news" varStatus="loop">
-						
-						<li style="margin-top: 10px;"><a style="color: #5858FA"
-								data-toggle="modal" data-target="#myModalNews${loop.count}" > ${news.title} </a></li>
-						
-						</c:forEach>
-						
+							<c:forEach items="${News}" var="news" varStatus="loop">
+
+								<li style="margin-top: 10px;"><a style="color: #5858FA"
+									data-toggle="modal" data-target="#myModalNews${loop.count}">
+										${news.title} </a></li>
+
+							</c:forEach>
+
 							<!-- <li style="margin-top: 10px;"><a style="color: #5858FA"
 								href="Shownews.aspx?filename=saheb11111"> आमदाराचे नुसते
 									नावच मोठे .......कृती मात्र शून्य - मा.साहेब </a></li>
@@ -675,10 +712,6 @@
 						</div>
 					</c:forEach>
 
-
-
-
-
 					<center>
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<button id="btnmore" class="btn btn-default col-md-12 "
@@ -687,22 +720,30 @@
 					</center>
 
 
+
+
+
+
+
 					<c:forEach items="${Videos}" var="vdo" varStatus="loop">
 						<div class="vid" style="display: none;">
+						
 							<div class="col-md-4 col-sm-4 mix " style="height: 300px;">
-								<div class="single-work">
-								
-
-
-									<div class="col-sm-3">
-										<iframe width="100%" src="${vdo.path}"
-											allowfullscreen></iframe>
-									</div>
-
-								</div>
+								<iframe src="${vdo.path}" style="width: 100%; height: 250px;"
+									allowfullscreen></iframe>
 							</div>
 						</div>
+
 					</c:forEach>
+					
+					
+					<center>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<button id="btnmorevideo" class="btn btn-default col-md-12 "
+								onclick="videos();">Show More</button>
+						</div>
+					</center>
+
 				</div>
 			</div>
 		</div>
@@ -827,8 +868,11 @@
 	var albums = document.getElementsByClassName("photoalbum");
 	var video = document.getElementsByClassName("vid");
 	var max = 3;
+	var max1 = 3;
 	var demo = showMoreAlbum();
 	function showMoreAlbum() {
+		max1=3
+		document.getElementById("btnmorevideo").style.display = "none";
 		document.getElementById("btnmore").style.display = "";
 		for (i = 0; i < max; i++) {
 
@@ -840,23 +884,41 @@
 			}
 		}
 		for (i = 0; i < video.length; i++) {
-			video[0].style.display = "none";
+			video[i].style.display = "none";
 		}
 		if (albums.length > max)
 			max = max + 3;
+		
 	}
 	function videos() {
-		max = 3;
+		
+		
 		document.getElementById("btnmore").style.display = "none";
+		document.getElementById("btnmorevideo").style.display = "";
+		
+		for (i = 0; i < max1; i++) {
+			
+
+			if (video.length > i) {
+				video[i].style.display = "";
+				
+				/* video[i].style.height = "200px";
+				video[i].style.width = "300px";*/
+			} else {
+				document.getElementById("btnmorevideo").style.display = "none";
+			}
+		}
+		
 		for (i = 0; i < albums.length; i++) {
 
 			albums[i].style.display = "none";
 		}
-		for (i = 0; i < video.length; i++) {
-			video[i].style.display = "";
-
-			video[i].style.height = "200px";
+			
+			if (video.length > max)
+				max1 = max1 + 3;
+			
+			
 		}
-	}
+	
 </script>
 </html>
