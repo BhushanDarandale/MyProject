@@ -1,5 +1,5 @@
 package com.jwt.model;
-// Generated Nov 4, 2017 3:05:00 PM by Hibernate Tools 4.3.5.Final
+// Generated Nov 18, 2017 3:41:09 PM by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -23,15 +23,17 @@ public class Contact implements java.io.Serializable {
 	private String email1;
 	private String message;
 	private Date date;
+	private String mobile;
 
 	public Contact() {
 	}
 
-	public Contact(String name, String email1, String message, Date date) {
+	public Contact(String name, String email1, String message, Date date, String mobile) {
 		this.name = name;
 		this.email1 = email1;
 		this.message = message;
 		this.date = date;
+		this.mobile = mobile;
 	}
 
 	@Id
@@ -81,6 +83,15 @@ public class Contact implements java.io.Serializable {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	@Column(name = "mobile", length = 20)
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
 }

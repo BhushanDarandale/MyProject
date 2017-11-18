@@ -7,6 +7,42 @@
 <head>
 <title>बाबु पाटे</title>
 </head>
+<script type="text/javascript">
+
+function alter()
+{
+
+	
+	var len=document.getElementById("message").value.length;
+	
+ if(len > 400) {
+    	alert("Maximum 400 characters allow")
+    	document.getElementById("message").value='';
+      return false;
+    }else{
+    	return true;
+    } 
+}
+
+
+
+function name()
+{
+	
+	var len=document.getElementById("newname").value.length;
+	
+ if(len > 30) {
+    	alert("Maximum 30 characters allow")
+    	document.getElementById("newname").value='';
+      return false;
+    }else{
+    	return true;
+    } 
+}
+
+</script>
+
+
 
 <script>
 	(function(d, s, id) {
@@ -36,7 +72,7 @@
 				type : "GET",
 				success : function(response) {
 					$('#newname').val('');
-					$('#email').val('');
+					$('#mobnumber').val('');
 					$('#message').val('');
 					alert("Thank You for Messeging")
 				},
@@ -786,27 +822,37 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<input id="newname" type="text" name="newname"
-												class="form-control" placeholder="नाव*" required="required"
+												class="form-control" placeholder="नाव*" required="required" oninput="name();" ondrop="name();" onkeypress="name();" 
 												data-error="Name is required.">
 											<div class="help-block with-errors"></div>
 										</div>
 									</div>
-									<div class="col-md-12">
+									<!-- <div class="col-md-12">
 										<div class="form-group">
 											<input id="email" type="email" name="email"
 												class="form-control" placeholder="ई मेल*"
 												required="required" data-error="Valid email is required.">
 											<div class="help-block with-errors"></div>
 										</div>
-									</div>
+									</div> -->
+									 
+									 <div class="col-md-12">
+										<div class="form-group">
+											<input id="mobnumber" type="text" name="mobnumber"
+												class="form-control" placeholder="मोबाईल  क्रमांक *" maxlength="10"
+												required="required" >
+											<div class="help-block with-errors"></div>
+										</div>
+									</div> 
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea id="message" name="message" class="form-control"
-												placeholder="संदेश*" rows="7" required="required"
+											<textarea id="message" name="message"   class="form-control"
+												placeholder="संदेश*" rows="7" required="required" oninput="alter();" ondrop="alter();" onkeypress="alter();"
 												data-error="Please,leave us a message."></textarea>
 											<div class="help-block with-errors"></div>
+											<p></p>
 										</div>
 									</div>
 									<div class="col-md-12">
@@ -826,7 +872,7 @@
 							<div class="single-address theme-color">
 								<div class="fb-page col-sm-12 col-xs-12"
 									data-href="https://www.facebook.com/babubhaupate/"
-									data-tabs="timeline" data-width="500" data-height="255"
+									data-tabs="timeline" data-width="500" data-height="280"
 									data-small-header="true" data-adapt-container-width="true"
 									data-hide-cover="true" data-show-facepile="true">
 									<blockquote cite="https://www.facebook.com/babubhaupate/"
@@ -921,4 +967,6 @@
 		}
 	
 </script>
+
+
 </html>

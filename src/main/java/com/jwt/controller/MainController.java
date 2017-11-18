@@ -164,13 +164,13 @@ public class MainController {
 
 	@RequestMapping(value = "/message", method = RequestMethod.GET)
 	public @ResponseBody String processAJAXRequest(@RequestParam("message") String message,
-			@RequestParam("email") String email, @RequestParam("newname") String name) {
+			@RequestParam("mobnumber") String mobnumber, @RequestParam("newname") String name) {
 		String response = "";
 		Contact contact = new Contact();
 		contact.setDate(new Date());
 		contact.setName(name);
 		contact.setMessage(message);
-		contact.setEmail1(email);
+		contact.setMobile(mobnumber);
 		Service.addContact(contact);
 
 		System.out.println(name);

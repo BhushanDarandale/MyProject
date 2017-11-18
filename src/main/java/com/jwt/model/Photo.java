@@ -1,5 +1,5 @@
 package com.jwt.model;
-// Generated Nov 4, 2017 3:05:00 PM by Hibernate Tools 4.3.5.Final
+// Generated Nov 18, 2017 3:41:09 PM by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -32,12 +32,13 @@ public class Photo implements java.io.Serializable {
 	private String status;
 	private Date date;
 	private Date time;
+	private String description;
 
 	public Photo() {
 	}
 
 	public Photo(PhotoAlbum photoAlbum, String name, String path, String size, String albumName, String albumImage,
-			String title, String status, Date date, Date time) {
+			String title, String status, Date date, Date time, String description) {
 		this.photoAlbum = photoAlbum;
 		this.name = name;
 		this.path = path;
@@ -48,6 +49,7 @@ public class Photo implements java.io.Serializable {
 		this.status = status;
 		this.date = date;
 		this.time = time;
+		this.description = description;
 	}
 
 	@Id
@@ -153,6 +155,15 @@ public class Photo implements java.io.Serializable {
 
 	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	@Column(name = "description", length = 4000)
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }
