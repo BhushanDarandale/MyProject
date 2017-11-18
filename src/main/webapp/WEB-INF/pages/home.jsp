@@ -8,38 +8,31 @@
 <title>बाबु पाटे</title>
 </head>
 <script type="text/javascript">
+	function alter() {
 
-function alter()
-{
+		var len = document.getElementById("message").value.length;
 
-	
-	var len=document.getElementById("message").value.length;
-	
- if(len > 400) {
-    	alert("Maximum 400 characters allow")
-    	document.getElementById("message").value='';
-      return false;
-    }else{
-    	return true;
-    } 
-}
+		if (len > 400) {
+			alert("Maximum 400 characters allow")
+			document.getElementById("message").value = '';
+			return false;
+		} else {
+			return true;
+		}
+	}
 
+	function names() {
 
+		var len = document.getElementById("newname").value.length;
 
-function name()
-{
-	
-	var len=document.getElementById("newname").value.length;
-	
- if(len > 30) {
-    	alert("Maximum 30 characters allow")
-    	document.getElementById("newname").value='';
-      return false;
-    }else{
-    	return true;
-    } 
-}
-
+		if (len > 30) {
+			alert("Maximum 30 characters allow")
+			document.getElementById("newname").value = '';
+			return false;
+		} else {
+			return true;
+		}
+	}
 </script>
 
 
@@ -302,16 +295,16 @@ function name()
 				<div class="modal-content">
 					<div class="modal-body" style="padding: 0px;">
 						<div>
-							<div id="myCarousel" class="carousel slide" data-ride="carousel">
+							<div id="myCarousel${loop.count}" class="carousel slide" data-ride="carousel">
 
 
 								<!-- Wrapper for slides -->
 								<div class="carousel-inner ">
 
 									<c:forEach items="${albumPojos.photos}" var="albmphoto"
-										varStatus="loop">
+										varStatus="loopimage">
 
-										<c:if test="${loop.count eq 1}">
+										<c:if test="${loopimage.count eq 1}">
 											<div class="item active " align="center"
 												style="background-color: #000000">
 
@@ -320,7 +313,7 @@ function name()
 											</div>
 										</c:if>
 
-										<c:if test="${loop.count gt 1}">
+										<c:if test="${loopimage.count gt 1}">
 											<div class="item" align="center"
 												style="background-color: #000000">
 
@@ -333,11 +326,11 @@ function name()
 								</div>
 
 								<!-- Left and right controls -->
-								<a class="left carousel-control" href="#myCarousel"
+								<a class="left carousel-control" href="#myCarousel${loop.count}"
 									data-slide="prev"> <span
 									class="glyphicon glyphicon-chevron-left"></span> <span
 									class="sr-only">Previous</span>
-								</a> <a class="right carousel-control" href="#myCarousel"
+								</a> <a class="right carousel-control" href="#myCarousel${loop.count}"
 									data-slide="next"> <span
 									class="glyphicon glyphicon-chevron-right"></span> <span
 									class="sr-only">Next</span>
@@ -432,13 +425,13 @@ function name()
 
 
 	<!-- END PHOTO modal -->
-	
+
 	<!-- NEWS MODAL -->
 
 	<c:forEach items="${News}" var="news" varStatus="loop">
 		<!-- Modal -->
 		<div class="modal fade" id="myModalNews${loop.count}" role="dialog">
- 
+
 
 
 			<div class="modal-dialog">
@@ -452,7 +445,7 @@ function name()
 					<div class="modal-body">
 
 
-						<img src="${news.image}" width="300" height="200">
+						<img src="${news.image}" >
 						<p>${news.description}</p>
 					</div>
 
@@ -548,19 +541,34 @@ function name()
 							<div class="item active">
 								<img
 									src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"
-									alt="Los Angeles">
+									style="height: 370px; width: auto">
 							</div>
 
 							<div class="item">
 								<img
 									src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
-									alt="Chicago">
+									style="height: 370px; width: auto">
 							</div>
 
 							<div class="item">
 								<img
 									src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
-									alt="New York">
+									style="height: 370px; width: auto">
+							</div>
+							<div class="item">
+								<img
+									src="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"
+									style="height: 370px; width: auto">
+							</div>
+							<div class="item">
+								<img
+									src="<%=request.getContextPath()%>/resources/light/assets/img/work/5.jpg"
+									style="height: auto; width: auto">
+							</div>
+							<div class="item">
+								<img
+									src="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"
+									style="height: 370px; width: auto">
 							</div>
 						</div>
 
@@ -685,7 +693,7 @@ function name()
 			<div class="row">
 				<ul class="work-list text-center">
 					<li class="filter " onclick="showMoreAlbum();">फोटो</li>
-					<li class="filter " onclick="videos();">विडिओ</li>
+					<li class="filter " onclick="showVideos();">विडिओ</li>
 				</ul>
 			</div>
 
@@ -723,7 +731,7 @@ function name()
 
 
 					<c:forEach items="${albumPojos}" var="albumPojos" varStatus="loop">
-						<div class="photoalbum">
+						<div class="photoalbum" style="display: none;">
 							<div class="col-md-4 col-sm-4 mix " style="height: 300px;">
 								<div class="single-work">
 									<img src="${albumPojos.albm.albumImage}" alt=""
@@ -763,7 +771,7 @@ function name()
 
 					<c:forEach items="${Videos}" var="vdo" varStatus="loop">
 						<div class="vid" style="display: none;">
-						
+
 							<div class="col-md-4 col-sm-4 mix " style="height: 300px;">
 								<iframe src="${vdo.path}" style="width: 100%; height: 250px;"
 									allowfullscreen></iframe>
@@ -771,12 +779,12 @@ function name()
 						</div>
 
 					</c:forEach>
-					
-					
+
+
 					<center>
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<button id="btnmorevideo" class="btn btn-default col-md-12 "
-								onclick="videos();">Show More</button>
+								onclick="showVideos();">Show More</button>
 						</div>
 					</center>
 
@@ -822,7 +830,8 @@ function name()
 									<div class="col-md-12">
 										<div class="form-group">
 											<input id="newname" type="text" name="newname"
-												class="form-control" placeholder="नाव*" required="required" oninput="name();" ondrop="name();" onkeypress="name();" 
+												class="form-control" placeholder="नाव*" required="required"
+												oninput="names();" ondrop="names();" onkeypress="names();"
 												data-error="Name is required.">
 											<div class="help-block with-errors"></div>
 										</div>
@@ -835,21 +844,22 @@ function name()
 											<div class="help-block with-errors"></div>
 										</div>
 									</div> -->
-									 
-									 <div class="col-md-12">
+
+									<div class="col-md-12">
 										<div class="form-group">
 											<input id="mobnumber" type="text" name="mobnumber"
-												class="form-control" placeholder="मोबाईल  क्रमांक *" maxlength="10"
-												required="required" >
+												class="form-control" placeholder="मोबाईल  क्रमांक *"
+												maxlength="10" required="required">
 											<div class="help-block with-errors"></div>
 										</div>
-									</div> 
+									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea id="message" name="message"   class="form-control"
-												placeholder="संदेश*" rows="7" required="required" oninput="alter();" ondrop="alter();" onkeypress="alter();"
+											<textarea id="message" name="message" class="form-control"
+												placeholder="संदेश*" rows="7" required="required"
+												oninput="alter();" ondrop="alter();" onkeypress="alter();"
 												data-error="Please,leave us a message."></textarea>
 											<div class="help-block with-errors"></div>
 											<p></p>
@@ -912,13 +922,16 @@ function name()
 </body>
 <script type="text/javascript">
 	var albums = document.getElementsByClassName("photoalbum");
-	var video = document.getElementsByClassName("vid");
-	var max = 3;
-	var max1 = 3;
+	var videos = document.getElementsByClassName("vid");
+	var max = 3, videoshow = 3;
 	var demo = showMoreAlbum();
 	function showMoreAlbum() {
-		max1=3
+		videoshow = 3;
 		document.getElementById("btnmorevideo").style.display = "none";
+		for (i = 0; i < videos.length; i++) {
+			videos[i].style.display = "none";
+		}
+
 		document.getElementById("btnmore").style.display = "";
 		for (i = 0; i < max; i++) {
 
@@ -929,43 +942,33 @@ function name()
 
 			}
 		}
-		for (i = 0; i < video.length; i++) {
-			video[i].style.display = "none";
-		}
+
 		if (albums.length > max)
 			max = max + 3;
-		
+
 	}
-	function videos() {
-		
-		
+	function showVideos() {
+		max = 3;
 		document.getElementById("btnmore").style.display = "none";
-		document.getElementById("btnmorevideo").style.display = "";
-		
-		for (i = 0; i < max1; i++) {
-			
-
-			if (video.length > i) {
-				video[i].style.display = "";
-				
-				/* video[i].style.height = "200px";
-				video[i].style.width = "300px";*/
-			} else {
-				document.getElementById("btnmorevideo").style.display = "none";
-			}
-		}
-		
 		for (i = 0; i < albums.length; i++) {
-
 			albums[i].style.display = "none";
 		}
-			
-			if (video.length > max)
-				max1 = max1 + 3;
-			
-			
+
+		document.getElementById("btnmorevideo").style.display = "";
+		for (i = 0; i < videoshow; i++) {
+
+			if (videos.length > i) {
+				videos[i].style.display = "";
+			} else {
+				document.getElementById("btnmorevideo").style.display = "none";
+
+			}
 		}
-	
+
+		if (videos.length > videoshow)
+			videoshow = videoshow + 3;
+
+	}
 </script>
 
 
