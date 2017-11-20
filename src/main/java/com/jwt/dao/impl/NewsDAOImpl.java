@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -31,6 +32,7 @@ public class NewsDAOImpl implements NewsDAO {
 		
 		Session session = this.sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(News.class);
+		criteria.addOrder(Order.desc("id"));
 		List<News> news = criteria.list();
 		return news;
 	}

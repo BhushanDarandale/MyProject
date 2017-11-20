@@ -79,7 +79,7 @@ public class UploadFile {
 			String nameOfFIle;
 			Calendar calendar = Calendar.getInstance();
 			Date date = calendar.getTime();
-			nameOfFIle = "music" + date.getTime();
+			nameOfFIle = "photo" + date.getTime();
 			try {
 				String[] originalFileName = multipartFile.getOriginalFilename().split("\\.");
 				fileName = originalFileName[0] + nameOfFIle + "." + originalFileName[originalFileName.length - 1];
