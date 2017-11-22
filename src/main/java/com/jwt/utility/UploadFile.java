@@ -72,7 +72,7 @@ public class UploadFile {
 		String fileLocation = null;
 		albumName = albumName.replace(' ', '_') + "_" + Calendar.getInstance().get(Calendar.YEAR);
 		try {
-			aTempDir = System.getProperty("catalina.base") + java.io.File.separator + "webapps" + java.io.File.separator
+			aTempDir = System.getProperty("catalina.base") /*+ java.io.File.separator + "webapps" */+ 6
 					+ "Files" + java.io.File.separator + "photo" + java.io.File.separator + albumName;
 
 			// File code
