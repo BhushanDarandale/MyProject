@@ -39,6 +39,9 @@ public class HomeController {
 	
 	@RequestMapping(value = "/")
 	public ModelAndView listEmployee(ModelAndView model) throws IOException {
+		
+		
+		
 		model.setViewName("home");
 		
 		 List<Video> videos = videoService.getAllVideos();

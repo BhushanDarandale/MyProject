@@ -98,18 +98,7 @@
 
 
 <body>
-	<!--===== Preloader ====-->
-	<div class="preloader">
-		<div class="spinner">
-			<div class="rect1"></div>
-			<div class="rect2"></div>
-			<div class="rect3"></div>
-			<div class="rect4"></div>
-			<div class="rect5"></div>
-		</div>
-	</div>
-
-
+	
 
 
 
@@ -214,7 +203,7 @@
 												action="updateAlbum?albumid=${albm.id }" method="post"
 												enctype="multipart/form-data" class="comment-form">
 												<input type="text" name="name" id="name"
-													value="${albm.albumName }" style="padding: 10px"
+													value="${albm.albumName }" style="padding: 10px" required="required" maxlength="100"
 													placeholder="Enter AlbumName">
 												<div
 													style="width: 100%; height: 45px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #ff0000; vertical-align: middle;">
@@ -261,7 +250,7 @@
 						<form name="formAlbum" action="addAlbum" method="post"
 							enctype="multipart/form-data" class="comment-form">
 							<input type="text" name="name" id="name" style="padding: 10px"
-								required="required" placeholder="Enter AlbumName">
+								required="required" placeholder="Enter AlbumName" maxlength="30">
 							<div
 								style="width: 100%; height: 45px; margin-bottom: 40px; border: 1px solid #ff0000; vertical-align: middle;">
 								<input type="file" name="filename" id="name" required="required"
@@ -384,7 +373,7 @@
 					<div class="modal-body">
 						<form name="formAlbum" action="addVideo" method="post"
 							enctype="multipart/form-data" class="comment-form">
-							<input type="text" name="videoname" id="videoname"
+							<input type="text" name="videoname" id="videoname" maxlength="30"
 								style="padding: 10px" placeholder="Enter Video Name">
 
 
@@ -517,13 +506,13 @@
 						<form name="formAlbum" action="addNews" method="post"
 							enctype="multipart/form-data" class="comment-form">
 							<div style="margin-bottom: 10px; margin-top: 10px">
-								<input type="text" name="newsname" id="newsname"
+								<input type="text" name="newsname" id="newsname" maxlength="50"
 									style="padding: 10px; width: 100%"
 									placeholder="Enter News Title">
 
 							</div>
 							<textarea type="text" name="newsdesc" id="newsdesc"
-								style="padding: 10px; width: 100%"
+								style="padding: 10px; width: 100%" maxlength="15000"
 								placeholder="Enter Description"></textarea>
 							<br>
 							<div
@@ -651,7 +640,7 @@
 							enctype="multipart/form-data" class="comment-form">
 							<div style="margin-bottom: 10px; margin-top: 10px">
 								<input type="text" name="noticename" id="noticename"
-									style="padding: 10px; width: 100%"
+									style="padding: 10px; width: 100%" maxlength="500"
 									placeholder="Enter Notice Title">
 
 							</div>

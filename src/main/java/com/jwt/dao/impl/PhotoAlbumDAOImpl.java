@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -30,9 +31,20 @@ public class PhotoAlbumDAOImpl implements PhotoAlbumDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<PhotoAlbum> getAllAlbums() {
-		// TODO Auto-generated method stub
+		/*// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession().createQuery("from PhotoAlbum")
 				.list();
+		*/
+		
+		Session session = this.sessionFactory.getCurrentSession();
+		Criteria criteria = session.createCriteria(PhotoAlbum.class);
+		criteria.addOrder(Order.desc("id"));
+		List<PhotoAlbum> photoalbum = criteria.list();
+		return photoalbum;
+		
+		
+		
+		
 	}
 
 	@Override
