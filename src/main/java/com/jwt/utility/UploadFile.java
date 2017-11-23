@@ -2,6 +2,7 @@ package com.jwt.utility;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +12,7 @@ import java.net.URLConnection;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.commons.net.ftp.FTPSClient;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class UploadFile {
@@ -18,8 +20,19 @@ public class UploadFile {
 		String fileName = null;
 		String aTempDir = null;
 		String fileLocation = null;
-		aTempDir = System.getProperty("catalina.base") + java.io.File.separator + "webapps" + java.io.File.separator
-				+ "Files" + java.io.File.separator + "News";
+		/*
+		 * aTempDir = System.getProperty("catalina.base") +
+		 * java.io.File.separator + "webapps" + java.io.File.separator + "Files"
+		 * + java.io.File.separator + "News";
+		 */
+
+		FTPSClient ftpClient = FTPConnection.getInstance().getConnection();
+
+		String dirPath = "/photo/bhushan/apk";
+
+		FTPUtil.makeDirectories(ftpClient, dirPath);
+		ftpClient.setFileType(ftpClient.BINARY_FILE_TYPE);
+		ftpClient.enterLocalPassiveMode();
 
 		// File code
 		String nameOfFIle;
@@ -37,7 +50,7 @@ public class UploadFile {
 			}
 
 		} catch (Exception e) {
-			fileName = url+"Error";
+			fileName = url + "Error";
 		}
 
 		fileLocation = aTempDir + java.io.File.separator + fileName;
@@ -72,8 +85,9 @@ public class UploadFile {
 		String fileLocation = null;
 		albumName = albumName.replace(' ', '_') + "_" + Calendar.getInstance().get(Calendar.YEAR);
 		try {
-			aTempDir = System.getProperty("catalina.base") /*+ java.io.File.separator + "webapps" */+ 6
-					+ "Files" + java.io.File.separator + "photo" + java.io.File.separator + albumName;
+			aTempDir = System.getProperty("catalina.base")
+					/* + java.io.File.separator + "webapps" */ + 6 + "Files" + java.io.File.separator + "photo"
+					+ java.io.File.separator + albumName;
 
 			// File code
 			String nameOfFIle;
@@ -105,10 +119,13 @@ public class UploadFile {
 		String fileName = null;
 		String aTempDir = null;
 		String fileLocation = null;
-		
+
+		final String dir = System.getProperty("user.dir");
+		System.out.println("current dir = " + dir);
+
 		try {
-			aTempDir = System.getProperty("catalina.base") + java.io.File.separator + "webapps" + java.io.File.separator
-					+ "Files" + java.io.File.separator + "videos";
+			aTempDir = dir + java.io.File.separator + "webapps" + java.io.File.separator + "Files"
+					+ java.io.File.separator + "videos";
 
 			// File code
 			String nameOfFIle;
@@ -132,14 +149,14 @@ public class UploadFile {
 		} catch (Exception e) {
 			return null;
 		}
-		return "/Files/videos/"+ fileName;
+		return "/Files/videos/" + fileLocation;
 	}
 
 	public static String uploadNewsPhoto(CommonsMultipartFile multipartFile) {
 		String fileName = null;
 		String aTempDir = null;
 		String fileLocation = null;
-		
+
 		try {
 			aTempDir = System.getProperty("catalina.base") + java.io.File.separator + "webapps" + java.io.File.separator
 					+ "Files" + java.io.File.separator + "News";
@@ -156,16 +173,33 @@ public class UploadFile {
 				fileName = multipartFile.getOriginalFilename();
 			}
 
-			fileLocation = aTempDir + java.io.File.separator + fileName;
-			new java.io.File(aTempDir).mkdirs();
+			FTPSClient ftpClient = new FTPSClient();
+			String user = "bhushandar";
+			String pass = "bhushan1234";
+			ftpClient.connect("babupate.com");
+			ftpClient.login(user, pass);
 
-			java.io.File file = new java.io.File(fileLocation);
-			FileOutputStream output = new FileOutputStream(file);
-			output.write(multipartFile.getBytes());
-			output.close();
+			String dirPath = "/files/news";
+
+			FTPUtil.makeDirectories(ftpClient, dirPath);
+			ftpClient.setFileType(ftpClient.BINARY_FILE_TYPE);
+			ftpClient.enterLocalPassiveMode();
+
+			try (InputStream input = multipartFile.getInputStream()) {
+				ftpClient.storeFile(dirPath + File.separator + fileName, input);
+			}
+
+			/*
+			 * fileLocation = aTempDir + java.io.File.separator + fileName; new
+			 * java.io.File(aTempDir).mkdirs();
+			 * 
+			 * java.io.File file = new java.io.File(fileLocation);
+			 * FileOutputStream output = new FileOutputStream(file);
+			 * output.write(multipartFile.getBytes()); output.close();
+			 */
 		} catch (Exception e) {
 			return null;
 		}
-		return "/Files/News/"+ fileName;
+		return "/files/news" + fileName;
 	}
 }
