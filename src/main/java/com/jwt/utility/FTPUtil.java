@@ -22,7 +22,8 @@ public class FTPUtil {
                     boolean created = ftpClient.makeDirectory(singleDir);
                     if (created) {
                         System.out.println("CREATED directory: " + singleDir);
-                        ftpClient.changeWorkingDirectory(singleDir);
+                        ftpClient.changeWorkingDirectory("/"+singleDir);
+                       
                     } else {
                         System.out.println("COULD NOT create directory: " + singleDir);
                         return false;
