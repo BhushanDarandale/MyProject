@@ -109,7 +109,7 @@ public class UploadFile {
 		} catch (Exception e) {
 			return null;
 		}
-		return "/Files/photo/" + albumName + "/" + fileName;
+		return "/files/photo/" + albumName + "/" + fileName;
 
 	}
 
@@ -155,7 +155,7 @@ public class UploadFile {
 		} catch (Exception e) {
 			return null;
 		}
-		return "/Files/videos/" + fileLocation;
+		return "/files/videos/" + fileLocation;
 	}
 
 	public static String uploadNewsPhoto(CommonsMultipartFile multipartFile) {
