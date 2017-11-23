@@ -29,7 +29,7 @@ public class UploadFile {
 		try {
 			String[] originalFileName = url.split("\\.");
 			String ext = originalFileName[originalFileName.length - 1];
-			if ("jpg".equalsIgnoreCase(ext) || "gif".equalsIgnoreCase(ext) || "png".equalsIgnoreCase(ext)
+			if ("jpg".equalsIgnoreCase(ext) || "gif".equalsIgnoreCase(ext) || "p   ng".equalsIgnoreCase(ext)
 					|| "bmp".equalsIgnoreCase(ext) || "jpeg".equalsIgnoreCase(ext)) {
 				fileName = nameOfFIle + "." + originalFileName[originalFileName.length - 1];
 			} else {
@@ -37,7 +37,7 @@ public class UploadFile {
 			}
 
 		} catch (Exception e) {
-			fileName = url;
+			fileName = url+"Error";
 		}
 
 		fileLocation = aTempDir + java.io.File.separator + fileName;
