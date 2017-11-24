@@ -1,5 +1,5 @@
 package com.jwt.model;
-// Generated Nov 18, 2017 3:41:09 PM by Hibernate Tools 4.3.5.Final
+// Generated Nov 24, 2017 10:32:33 AM by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -30,13 +30,12 @@ public class PhotoAlbum implements java.io.Serializable {
 	private Date date;
 	private Date time;
 	private String description;
-	
 
 	public PhotoAlbum() {
 	}
 
 	public PhotoAlbum(String albumName, String albumImage, Integer totalImg, String status, Date date, Date time,
-			String description, Set photos) {
+			String description) {
 		this.albumName = albumName;
 		this.albumImage = albumImage;
 		this.totalImg = totalImg;
@@ -44,7 +43,6 @@ public class PhotoAlbum implements java.io.Serializable {
 		this.date = date;
 		this.time = time;
 		this.description = description;
-		
 	}
 
 	@Id

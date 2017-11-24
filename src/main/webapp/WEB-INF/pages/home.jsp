@@ -5,7 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script src="<%=request.getContextPath() %>/resources/light/assets/js/my.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/light/assets/js/my.js"></script>
 <title>बाबु पाटे</title>
 </head>
 <body>
@@ -199,7 +200,7 @@
 					<div>
 						<h2>
 							<center>
-								<font color="#ff9933">आमचे प्रेरणास्थान </font>
+								<font color="#ff9933">प्रेरणास्थान </font>
 							</center>
 						</h2>
 					</div>
@@ -256,36 +257,22 @@
 							<li data-target="#myCarousel" data-slide-to="2"></li>
 						</ol>
 						<div class="carousel-inner">
-							<div class="item active">
-								<img
-									src="<%=request.getContextPath()%>/resources/light/assets/img/work/1.jpg"
-									style="height: 370px; width: auto">
-							</div>
-							<div class="item">
-								<img
-									src="<%=request.getContextPath()%>/resources/light/assets/img/work/2.jpg"
-									style="height: 370px; width: auto">
-							</div>
-							<div class="item">
-								<img
-									src="<%=request.getContextPath()%>/resources/light/assets/img/work/3.jpg"
-									style="height: 370px; width: auto">
-							</div>
-							<div class="item">
-								<img
-									src="<%=request.getContextPath()%>/resources/light/assets/img/work/4.jpg"
-									style="height: 370px; width: auto">
-							</div>
-							<div class="item">
-								<img
-									src="<%=request.getContextPath()%>/resources/light/assets/img/work/5.jpg"
-									style="height: auto; width: auto">
-							</div>
-							<div class="item">
-								<img
-									src="<%=request.getContextPath()%>/resources/light/assets/img/work/6.jpg"
-									style="height: 370px; width: auto">
-							</div>
+							<c:forEach items="${Carousels}" var="carousels"
+								varStatus="loopcara">
+								<c:if test="${loopcara.count eq 1}">
+									<div class="item active">
+										<img src="${carousels.path}"
+											style="height: 370px; width: auto">
+									</div>
+								</c:if>
+								<c:if test="${loopcara.count gt 1}">
+									<div class="item ">
+										<img
+											src="${carousels.path}"
+											style="height: 370px; width: auto">
+									</div>
+								</c:if>
+							</c:forEach>
 						</div>
 						<a class="left carousel-control" href="#myCarousel"
 							data-slide="prev"> <span
@@ -505,7 +492,7 @@
 	</footer>
 </body>
 <script type="text/javascript">
-	 var albums = document.getElementsByClassName("photoalbum");
+	var albums = document.getElementsByClassName("photoalbum");
 	var videos = document.getElementsByClassName("vid");
 	var max = 3, videoshow = 3;
 	var demo = showMoreAlbum();
@@ -543,6 +530,6 @@
 		}
 		if (videos.length > videoshow)
 			videoshow = videoshow + 3;
-	} 
+	}
 </script>
 </html>
