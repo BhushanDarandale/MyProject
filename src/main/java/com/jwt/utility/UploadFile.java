@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Date;
+
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPSClient;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
@@ -25,6 +27,7 @@ public class UploadFile {
 			}
 
 			FTPSClient ftpClient =FTPConnection.getConnection();
+			ftpClient.setFileTransferMode(FTP.COMPRESSED_TRANSFER_MODE);
 			String dirPath = "/files/photo/";
 			FTPUtil.makeDirectories(ftpClient, dirPath);
 			ftpClient.setFileType(ftpClient.BINARY_FILE_TYPE);
@@ -57,6 +60,7 @@ public class UploadFile {
 				fileName = multipartFile.getOriginalFilename();
 			}
 			FTPSClient ftpClient =FTPConnection.getConnection();
+			ftpClient.setFileTransferMode(FTP.COMPRESSED_TRANSFER_MODE);
 			String dirPath = "/files/videos/";
 
 			FTPUtil.makeDirectories(ftpClient, dirPath);
@@ -93,6 +97,7 @@ public class UploadFile {
 
 			FTPUtil.makeDirectories(ftpClient, dirPath);
 			ftpClient.setFileType(ftpClient.BINARY_FILE_TYPE);
+			ftpClient.setFileTransferMode(FTP.COMPRESSED_TRANSFER_MODE);
 			ftpClient.enterLocalPassiveMode();
 
 			try (InputStream input = multipartFile.getInputStream()) {
