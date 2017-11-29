@@ -100,6 +100,19 @@ public class UploadFile {
 			ftpClient.setFileTransferMode(FTP.COMPRESSED_TRANSFER_MODE);
 			ftpClient.enterLocalPassiveMode();
 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			try (InputStream input = multipartFile.getInputStream()) {
 				ftpClient.storeFile(dirPath+fileName, input);
 			}
