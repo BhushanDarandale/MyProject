@@ -48,23 +48,26 @@
 			</div>
 		</div>
 	</header>
-	<div id="home" class="welcome-area" data-stellar-background-ratio="0.4"
-		style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/banner-01.png);">
-		<div class="welcome-table">
-			<div class="welcome-cell">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="home-arrow">
-								<a href="#about" class="smoth-scroll theme-color"><i
-									class="fa fa-angle-double-down"></i></a>
+	<center>
+		<div id="home" class="welcome-area"
+			data-stellar-background-ratio="0.4"
+			style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/banner-01.jpg);">
+			<div class="welcome-table">
+				<div class="welcome-cell">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="home-arrow">
+									<a href="#about" class="smoth-scroll theme-color"><i
+										class="fa fa-angle-double-down"></i></a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</center>
 	<div id="about" class="about-area section-padding">
 		<div class="container">
 			<center>
@@ -267,8 +270,7 @@
 								</c:if>
 								<c:if test="${loopcara.count gt 1}">
 									<div class="item ">
-										<img
-											src="${carousels.path}"
+										<img src="${carousels.path}"
 											style="height: 370px; width: auto">
 									</div>
 								</c:if>
@@ -436,7 +438,8 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<textarea id="message" name="message" class="form-control"
-												placeholder="--संदेश किंवा तक्रार-- तक्रार असल्यास आपला प्रभाग क्रमांक आधी टाका "
+												placeholder="--संदेश किंवा तक्रार--
+												(तक्रार असल्यास आपला प्रभाग क्रमांक आधी टाका) "
 												placeholder="संदेश*" rows="7" required="required"
 												oninput="alter();" ondrop="alter();" onkeypress="alter();"></textarea>
 											<div class="help-block with-errors"></div>
