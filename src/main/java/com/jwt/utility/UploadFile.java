@@ -121,6 +121,6 @@ public class UploadFile {
 		} catch (Exception e) {
 			return null;
 		}
-		return "/files/news" + fileName;
+		return "/files/news/" + fileName;
 	}
 }

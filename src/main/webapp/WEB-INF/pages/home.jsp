@@ -436,8 +436,7 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<textarea id="message" name="message" class="form-control"
-												placeholder="--संदेश किंवा तक्रार--
-												तक्रार असल्यास आपला प्रभाग क्रमांक आधी टाका "
+												placeholder="--संदेश किंवा तक्रार-- तक्रार असल्यास आपला प्रभाग क्रमांक आधी टाका "
 												placeholder="संदेश*" rows="7" required="required"
 												oninput="alter();" ondrop="alter();" onkeypress="alter();"></textarea>
 											<div class="help-block with-errors"></div>
