@@ -5,9 +5,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="keywords"
+	content="babubhau pate, babupate website, babupate shivsena, babupate narayangaon, बाबु पाटे, shivsena narayangaon,junnar, narayangaon election, narayangaon">
+<title>बाबु पाटे</title>
 <script
 	src="<%=request.getContextPath()%>/resources/light/assets/js/my.js"></script>
-<title>बाबु पाटे</title>
 </head>
 <body>
 	<header class="navbar custom-navbar navbar-fixed-top">
@@ -48,7 +50,7 @@
 			</div>
 		</div>
 	</header>
-	<center>
+	
 		<div id="home" class="welcome-area"
 			data-stellar-background-ratio="0.4"
 			style="background-image: url(<%=request.getContextPath()%>/resources/light/assets/img/banner-01.jpg);">
@@ -67,7 +69,7 @@
 				</div>
 			</div>
 		</div>
-	</center>
+
 	<div id="about" class="about-area section-padding">
 		<div class="container">
 			<center>
@@ -133,7 +135,7 @@
 						</c:choose>
 					</div>
 				</div>
-				<br> <a class="btn theme-color" href="#">Download Magazine</a>
+				<br> <!-- <a class="btn theme-color" href="#">Download Magazine</a> -->
 		</div>
 	</div>
 	<c:forEach items="${albumPojos}" var="albumPojos" varStatus="loop">
@@ -485,9 +487,9 @@
 		<div class="container">
 			<div class="row wow zoomIn" data-wow-delay="0.4s">
 				<div class="col-md-12 text-center">
-					<p onclick="location.href='<%=request.getContextPath()%>/login'">
-						&copy;2017 <strong>Jdsoftsolution</strong>. All Rights Reserved
-					</p>
+				<%-- 	<p onclick="location.href='<%=request.getContextPath()%>/login'"> --%>
+						&copy;2017 <strong>babupate.com</strong>. All Rights Reserved
+				<!-- 	</p> --> 
 				</div>
 			</div>
 		</div>
